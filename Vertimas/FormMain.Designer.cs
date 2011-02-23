@@ -29,6 +29,13 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources=new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+			this.splitContainerMain=new System.Windows.Forms.SplitContainer();
+			this.treeViewResx=new System.Windows.Forms.TreeView();
+			this.splitContainerResource=new System.Windows.Forms.SplitContainer();
+			this.checkedListBoxLanguages=new System.Windows.Forms.CheckedListBox();
+			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
+			this.panelTitle=new System.Windows.Forms.Panel();
+			this.labelTitle=new System.Windows.Forms.Label();
 			this.menuStrip=new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -42,14 +49,6 @@
 			this.keysToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.addNewKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-			this.splitContainerMain=new System.Windows.Forms.SplitContainer();
-			this.treeViewResx=new System.Windows.Forms.TreeView();
-			this.splitContainerResource=new System.Windows.Forms.SplitContainer();
-			this.checkedListBoxLanguages=new System.Windows.Forms.CheckedListBox();
-			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
-			this.panelTitle=new System.Windows.Forms.Panel();
-			this.labelTitle=new System.Windows.Forms.Label();
-			this.menuStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
 			this.splitContainerMain.Panel2.SuspendLayout();
 			this.splitContainerMain.SuspendLayout();
@@ -58,7 +57,74 @@
 			this.splitContainerResource.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridResourcesStrings)).BeginInit();
 			this.panelTitle.SuspendLayout();
+			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// splitContainerMain
+			// 
+			resources.ApplyResources(this.splitContainerMain, "splitContainerMain");
+			this.splitContainerMain.Name="splitContainerMain";
+			// 
+			// splitContainerMain.Panel1
+			// 
+			resources.ApplyResources(this.splitContainerMain.Panel1, "splitContainerMain.Panel1");
+			this.splitContainerMain.Panel1.Controls.Add(this.treeViewResx);
+			// 
+			// splitContainerMain.Panel2
+			// 
+			resources.ApplyResources(this.splitContainerMain.Panel2, "splitContainerMain.Panel2");
+			this.splitContainerMain.Panel2.Controls.Add(this.splitContainerResource);
+			// 
+			// treeViewResx
+			// 
+			resources.ApplyResources(this.treeViewResx, "treeViewResx");
+			this.treeViewResx.HideSelection=false;
+			this.treeViewResx.Name="treeViewResx";
+			this.treeViewResx.AfterSelect+=new System.Windows.Forms.TreeViewEventHandler(this.treeViewResx_AfterSelect);
+			this.treeViewResx.DoubleClick+=new System.EventHandler(this.treeViewResx_DoubleClick);
+			// 
+			// splitContainerResource
+			// 
+			resources.ApplyResources(this.splitContainerResource, "splitContainerResource");
+			this.splitContainerResource.Name="splitContainerResource";
+			// 
+			// splitContainerResource.Panel1
+			// 
+			resources.ApplyResources(this.splitContainerResource.Panel1, "splitContainerResource.Panel1");
+			this.splitContainerResource.Panel1.Controls.Add(this.checkedListBoxLanguages);
+			// 
+			// splitContainerResource.Panel2
+			// 
+			resources.ApplyResources(this.splitContainerResource.Panel2, "splitContainerResource.Panel2");
+			this.splitContainerResource.Panel2.Controls.Add(this.gridResourcesStrings);
+			this.splitContainerResource.Panel2.Controls.Add(this.panelTitle);
+			// 
+			// checkedListBoxLanguages
+			// 
+			resources.ApplyResources(this.checkedListBoxLanguages, "checkedListBoxLanguages");
+			this.checkedListBoxLanguages.CheckOnClick=true;
+			this.checkedListBoxLanguages.FormattingEnabled=true;
+			this.checkedListBoxLanguages.MultiColumn=true;
+			this.checkedListBoxLanguages.Name="checkedListBoxLanguages";
+			this.checkedListBoxLanguages.ItemCheck+=new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxLanguages_ItemCheck);
+			// 
+			// gridResourcesStrings
+			// 
+			resources.ApplyResources(this.gridResourcesStrings, "gridResourcesStrings");
+			this.gridResourcesStrings.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.gridResourcesStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridResourcesStrings.Name="gridResourcesStrings";
+			// 
+			// panelTitle
+			// 
+			resources.ApplyResources(this.panelTitle, "panelTitle");
+			this.panelTitle.Controls.Add(this.labelTitle);
+			this.panelTitle.Name="panelTitle";
+			// 
+			// labelTitle
+			// 
+			resources.ApplyResources(this.labelTitle, "labelTitle");
+			this.labelTitle.Name="labelTitle";
 			// 
 			// menuStrip
 			// 
@@ -147,72 +213,6 @@
 			this.deleteKeyToolStripMenuItem.Name="deleteKeyToolStripMenuItem";
 			this.deleteKeyToolStripMenuItem.Click+=new System.EventHandler(this.deleteKeyToolStripMenuItem_Click);
 			// 
-			// splitContainerMain
-			// 
-			resources.ApplyResources(this.splitContainerMain, "splitContainerMain");
-			this.splitContainerMain.Name="splitContainerMain";
-			// 
-			// splitContainerMain.Panel1
-			// 
-			resources.ApplyResources(this.splitContainerMain.Panel1, "splitContainerMain.Panel1");
-			this.splitContainerMain.Panel1.Controls.Add(this.treeViewResx);
-			// 
-			// splitContainerMain.Panel2
-			// 
-			resources.ApplyResources(this.splitContainerMain.Panel2, "splitContainerMain.Panel2");
-			this.splitContainerMain.Panel2.Controls.Add(this.splitContainerResource);
-			// 
-			// treeViewResx
-			// 
-			resources.ApplyResources(this.treeViewResx, "treeViewResx");
-			this.treeViewResx.HideSelection=false;
-			this.treeViewResx.Name="treeViewResx";
-			this.treeViewResx.AfterSelect+=new System.Windows.Forms.TreeViewEventHandler(this.treeViewResx_AfterSelect);
-			this.treeViewResx.DoubleClick+=new System.EventHandler(this.treeViewResx_DoubleClick);
-			// 
-			// splitContainerResource
-			// 
-			resources.ApplyResources(this.splitContainerResource, "splitContainerResource");
-			this.splitContainerResource.Name="splitContainerResource";
-			// 
-			// splitContainerResource.Panel1
-			// 
-			resources.ApplyResources(this.splitContainerResource.Panel1, "splitContainerResource.Panel1");
-			this.splitContainerResource.Panel1.Controls.Add(this.checkedListBoxLanguages);
-			// 
-			// splitContainerResource.Panel2
-			// 
-			resources.ApplyResources(this.splitContainerResource.Panel2, "splitContainerResource.Panel2");
-			this.splitContainerResource.Panel2.Controls.Add(this.gridResourcesStrings);
-			this.splitContainerResource.Panel2.Controls.Add(this.panelTitle);
-			// 
-			// checkedListBoxLanguages
-			// 
-			resources.ApplyResources(this.checkedListBoxLanguages, "checkedListBoxLanguages");
-			this.checkedListBoxLanguages.CheckOnClick=true;
-			this.checkedListBoxLanguages.FormattingEnabled=true;
-			this.checkedListBoxLanguages.MultiColumn=true;
-			this.checkedListBoxLanguages.Name="checkedListBoxLanguages";
-			this.checkedListBoxLanguages.ItemCheck+=new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxLanguages_ItemCheck);
-			// 
-			// gridResourcesStrings
-			// 
-			resources.ApplyResources(this.gridResourcesStrings, "gridResourcesStrings");
-			this.gridResourcesStrings.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.gridResourcesStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gridResourcesStrings.Name="gridResourcesStrings";
-			// 
-			// panelTitle
-			// 
-			resources.ApplyResources(this.panelTitle, "panelTitle");
-			this.panelTitle.Controls.Add(this.labelTitle);
-			this.panelTitle.Name="panelTitle";
-			// 
-			// labelTitle
-			// 
-			resources.ApplyResources(this.labelTitle, "labelTitle");
-			this.labelTitle.Name="labelTitle";
-			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -223,8 +223,6 @@
 			this.Name="FormMain";
 			this.WindowState=System.Windows.Forms.FormWindowState.Maximized;
 			this.FormClosing+=new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-			this.menuStrip.ResumeLayout(false);
-			this.menuStrip.PerformLayout();
 			this.splitContainerMain.Panel1.ResumeLayout(false);
 			this.splitContainerMain.Panel2.ResumeLayout(false);
 			this.splitContainerMain.ResumeLayout(false);
@@ -233,6 +231,8 @@
 			this.splitContainerResource.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridResourcesStrings)).EndInit();
 			this.panelTitle.ResumeLayout(false);
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

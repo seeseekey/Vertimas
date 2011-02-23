@@ -118,37 +118,70 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ö&amp;ffnen...</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 6</value>
+  </data>
+  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Speichern</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>B&amp;eenden</value>
+  </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Datei</value>
   </data>
-  <data name="addNewKeyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Neuen Schlüssel hinzufügen</value>
-  </data>
-  <data name="deleteKeyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Schlüssel löschen</value>
+  <data name="hideTranslatedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 22</value>
   </data>
   <data name="hideTranslatedToolStripMenuItem.Text" xml:space="preserve">
     <value>Übersetzte Schlüssel verstecken</value>
   </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>B&amp;eenden</value>
-  </data>
-  <data name="keysToolStripMenuItem.Text" xml:space="preserve">
-    <value>Schlüssel</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Speichern</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ö&amp;ffnen...</value>
+  <data name="hideNontranslatedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 22</value>
   </data>
   <data name="hideNontranslatedToolStripMenuItem.Text" xml:space="preserve">
     <value>Nicht Übersetzte Schlüssel verstecken</value>
   </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ansicht</value>
+  </data>
+  <data name="addNewKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="addNewKeyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Neuen Schlüssel hinzufügen</value>
+  </data>
+  <data name="deleteKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="deleteKeyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Schlüssel löschen</value>
+  </data>
+  <data name="keysToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="keysToolStripMenuItem.Text" xml:space="preserve">
+    <value>Schlüssel</value>
   </data>
 </root>

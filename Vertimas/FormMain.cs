@@ -11,9 +11,10 @@ using System.Windows.Forms;
 //TODO Pfade merken
 //TODO Filtwer Funktionen
 //TODO Icon
-//Fehlererkennung wieder aktivieren
+//TODO Fehlererkennung wieder aktivieren
 //TODO About Dialog
 //TODO Löschen von Keys funktioniert nicht
+//Google Translate Integration
 namespace Vertimas
 {
     public partial class FormMain : Form
