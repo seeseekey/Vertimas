@@ -70,20 +70,18 @@
       <DependentUpon>AddKey.cs</DependentUpon>
     </Compile>
     <Compile Include="Common.cs" />
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LanguageHolder.cs" />
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="FormMain.cs" />
+    <Compile Include="FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageHolder.cs" />
     <Compile Include="PathHolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddKey.resx">
       <DependentUpon>AddKey.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZoomWindow.resx">

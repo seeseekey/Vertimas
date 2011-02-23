@@ -32,8 +32,6 @@
 			this.fileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-			this.closeToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem1=new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.hideNontranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +45,9 @@
 			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
 			this.panelTitle=new System.Windows.Forms.Panel();
 			this.labelTitle=new System.Windows.Forms.Label();
+			this.toolStripMenuItem2=new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripMenuItem3=new System.Windows.Forms.ToolStripSeparator();
+			this.hideTranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStripMain.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
 			this.splitContainerMain.Panel2.SuspendLayout();
@@ -74,9 +75,9 @@
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
+            this.toolStripMenuItem2,
             this.saveToolStripMenuItem,
-            this.closeToolStripMenuItem,
-            this.toolStripMenuItem1,
+            this.toolStripMenuItem3,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name="fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size=new System.Drawing.Size(35, 20);
@@ -86,8 +87,8 @@
 			// 
 			this.openToolStripMenuItem.Name="openToolStripMenuItem";
 			this.openToolStripMenuItem.ShortcutKeys=((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.O)));
-			this.openToolStripMenuItem.Size=new System.Drawing.Size(140, 22);
-			this.openToolStripMenuItem.Text="&Open";
+			this.openToolStripMenuItem.Size=new System.Drawing.Size(152, 22);
+			this.openToolStripMenuItem.Text="&Open...";
 			this.openToolStripMenuItem.Click+=new System.EventHandler(this.openToolStripMenuItem_Click);
 			// 
 			// saveToolStripMenuItem
@@ -97,18 +98,6 @@
 			this.saveToolStripMenuItem.Size=new System.Drawing.Size(140, 22);
 			this.saveToolStripMenuItem.Text="&Save";
 			this.saveToolStripMenuItem.Click+=new System.EventHandler(this.saveToolStripMenuItem_Click);
-			// 
-			// closeToolStripMenuItem
-			// 
-			this.closeToolStripMenuItem.Name="closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size=new System.Drawing.Size(140, 22);
-			this.closeToolStripMenuItem.Text="&Close";
-			this.closeToolStripMenuItem.Click+=new System.EventHandler(this.closeToolStripMenuItem_Click);
-			// 
-			// toolStripMenuItem1
-			// 
-			this.toolStripMenuItem1.Name="toolStripMenuItem1";
-			this.toolStripMenuItem1.Size=new System.Drawing.Size(137, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -120,10 +109,11 @@
 			// settingsToolStripMenuItem
 			// 
 			this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hideTranslatedToolStripMenuItem,
             this.hideNontranslatedToolStripMenuItem});
 			this.settingsToolStripMenuItem.Name="settingsToolStripMenuItem";
-			this.settingsToolStripMenuItem.Size=new System.Drawing.Size(58, 20);
-			this.settingsToolStripMenuItem.Text="Settings";
+			this.settingsToolStripMenuItem.Size=new System.Drawing.Size(41, 20);
+			this.settingsToolStripMenuItem.Text="View";
 			// 
 			// hideNontranslatedToolStripMenuItem
 			// 
@@ -144,14 +134,16 @@
 			// addNewKeyToolStripMenuItem
 			// 
 			this.addNewKeyToolStripMenuItem.Name="addNewKeyToolStripMenuItem";
-			this.addNewKeyToolStripMenuItem.Size=new System.Drawing.Size(138, 22);
+			this.addNewKeyToolStripMenuItem.ShortcutKeys=((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.N)));
+			this.addNewKeyToolStripMenuItem.Size=new System.Drawing.Size(177, 22);
 			this.addNewKeyToolStripMenuItem.Text="Add New Key";
 			this.addNewKeyToolStripMenuItem.Click+=new System.EventHandler(this.addNewKeyToolStripMenuItem_Click);
 			// 
 			// deleteKeyToolStripMenuItem
 			// 
 			this.deleteKeyToolStripMenuItem.Name="deleteKeyToolStripMenuItem";
-			this.deleteKeyToolStripMenuItem.Size=new System.Drawing.Size(138, 22);
+			this.deleteKeyToolStripMenuItem.ShortcutKeys=System.Windows.Forms.Keys.Delete;
+			this.deleteKeyToolStripMenuItem.Size=new System.Drawing.Size(177, 22);
 			this.deleteKeyToolStripMenuItem.Text="Delete Key";
 			this.deleteKeyToolStripMenuItem.Click+=new System.EventHandler(this.deleteKeyToolStripMenuItem_Click);
 			// 
@@ -214,12 +206,13 @@
 			this.checkedListBoxLanguages.TabIndex=0;
 			this.checkedListBoxLanguages.ItemCheck+=new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxLanguages_ItemCheck);
 			// 
-			// gridEXStrings
+			// gridResourcesStrings
 			// 
+			this.gridResourcesStrings.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.gridResourcesStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridResourcesStrings.Dock=System.Windows.Forms.DockStyle.Fill;
 			this.gridResourcesStrings.Location=new System.Drawing.Point(0, 35);
-			this.gridResourcesStrings.Name="gridEXStrings";
+			this.gridResourcesStrings.Name="gridResourcesStrings";
 			this.gridResourcesStrings.Size=new System.Drawing.Size(696, 364);
 			this.gridResourcesStrings.TabIndex=3;
 			// 
@@ -244,7 +237,23 @@
 			this.labelTitle.Text="{Title}";
 			this.labelTitle.TextAlign=System.Drawing.ContentAlignment.TopCenter;
 			// 
-			// MainForm
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name="toolStripMenuItem2";
+			this.toolStripMenuItem2.Size=new System.Drawing.Size(149, 6);
+			// 
+			// toolStripMenuItem3
+			// 
+			this.toolStripMenuItem3.Name="toolStripMenuItem3";
+			this.toolStripMenuItem3.Size=new System.Drawing.Size(149, 6);
+			// 
+			// hideTranslatedToolStripMenuItem
+			// 
+			this.hideTranslatedToolStripMenuItem.Name="hideTranslatedToolStripMenuItem";
+			this.hideTranslatedToolStripMenuItem.Size=new System.Drawing.Size(169, 22);
+			this.hideTranslatedToolStripMenuItem.Text="Hide translated";
+			// 
+			// FormMain
 			// 
 			this.AutoScaleDimensions=new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
@@ -253,9 +262,9 @@
 			this.Controls.Add(this.menuStripMain);
 			this.Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.MainMenuStrip=this.menuStripMain;
-			this.Name="MainForm";
+			this.Name="FormMain";
 			this.StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text="ResxTranslator";
+			this.Text="Vertimas";
 			this.WindowState=System.Windows.Forms.FormWindowState.Maximized;
 			this.FormClosing+=new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.menuStripMain.ResumeLayout(false);
@@ -279,7 +288,6 @@
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
 		//private Janus.Windows.GridEX.GridEX gridEXStrings;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.SplitContainer splitContainerMain;
@@ -292,9 +300,11 @@
         private System.Windows.Forms.ToolStripMenuItem hideNontranslatedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keysToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewKeyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteKeyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem deleteKeyToolStripMenuItem;
 		private System.Windows.Forms.DataGridView gridResourcesStrings;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+		private System.Windows.Forms.ToolStripMenuItem hideTranslatedToolStripMenuItem;
 	}
 }
 
