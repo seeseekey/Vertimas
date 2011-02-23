@@ -28,12 +28,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.menuStripMain=new System.Windows.Forms.MenuStrip();
+			System.ComponentModel.ComponentResourceManager resources=new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+			this.menuStrip=new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem2=new System.Windows.Forms.ToolStripSeparator();
 			this.saveToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem3=new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.hideTranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.hideNontranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.keysToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.addNewKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -45,10 +49,7 @@
 			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
 			this.panelTitle=new System.Windows.Forms.Panel();
 			this.labelTitle=new System.Windows.Forms.Label();
-			this.toolStripMenuItem2=new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripMenuItem3=new System.Windows.Forms.ToolStripSeparator();
-			this.hideTranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-			this.menuStripMain.SuspendLayout();
+			this.menuStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
 			this.splitContainerMain.Panel2.SuspendLayout();
 			this.splitContainerMain.SuspendLayout();
@@ -59,20 +60,18 @@
 			this.panelTitle.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// menuStripMain
+			// menuStrip
 			// 
-			this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			resources.ApplyResources(this.menuStrip, "menuStrip");
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.keysToolStripMenuItem});
-			this.menuStripMain.Location=new System.Drawing.Point(0, 0);
-			this.menuStripMain.Name="menuStripMain";
-			this.menuStripMain.Size=new System.Drawing.Size(946, 24);
-			this.menuStripMain.TabIndex=0;
-			this.menuStripMain.Text="menuStrip1";
+			this.menuStrip.Name="menuStrip";
 			// 
 			// fileToolStripMenuItem
 			// 
+			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.toolStripMenuItem2,
@@ -80,195 +79,152 @@
             this.toolStripMenuItem3,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name="fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size=new System.Drawing.Size(35, 20);
-			this.fileToolStripMenuItem.Text="&File";
 			// 
 			// openToolStripMenuItem
 			// 
+			resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
 			this.openToolStripMenuItem.Name="openToolStripMenuItem";
-			this.openToolStripMenuItem.ShortcutKeys=((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.O)));
-			this.openToolStripMenuItem.Size=new System.Drawing.Size(152, 22);
-			this.openToolStripMenuItem.Text="&Open...";
 			this.openToolStripMenuItem.Click+=new System.EventHandler(this.openToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem2
+			// 
+			resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+			this.toolStripMenuItem2.Name="toolStripMenuItem2";
 			// 
 			// saveToolStripMenuItem
 			// 
+			resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
 			this.saveToolStripMenuItem.Name="saveToolStripMenuItem";
-			this.saveToolStripMenuItem.ShortcutKeys=((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.S)));
-			this.saveToolStripMenuItem.Size=new System.Drawing.Size(140, 22);
-			this.saveToolStripMenuItem.Text="&Save";
 			this.saveToolStripMenuItem.Click+=new System.EventHandler(this.saveToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem3
+			// 
+			resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+			this.toolStripMenuItem3.Name="toolStripMenuItem3";
 			// 
 			// exitToolStripMenuItem
 			// 
+			resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
 			this.exitToolStripMenuItem.Name="exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size=new System.Drawing.Size(140, 22);
-			this.exitToolStripMenuItem.Text="E&xit";
 			this.exitToolStripMenuItem.Click+=new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
 			// settingsToolStripMenuItem
 			// 
+			resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
 			this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hideTranslatedToolStripMenuItem,
             this.hideNontranslatedToolStripMenuItem});
 			this.settingsToolStripMenuItem.Name="settingsToolStripMenuItem";
-			this.settingsToolStripMenuItem.Size=new System.Drawing.Size(41, 20);
-			this.settingsToolStripMenuItem.Text="View";
+			// 
+			// hideTranslatedToolStripMenuItem
+			// 
+			resources.ApplyResources(this.hideTranslatedToolStripMenuItem, "hideTranslatedToolStripMenuItem");
+			this.hideTranslatedToolStripMenuItem.Name="hideTranslatedToolStripMenuItem";
 			// 
 			// hideNontranslatedToolStripMenuItem
 			// 
+			resources.ApplyResources(this.hideNontranslatedToolStripMenuItem, "hideNontranslatedToolStripMenuItem");
 			this.hideNontranslatedToolStripMenuItem.Name="hideNontranslatedToolStripMenuItem";
-			this.hideNontranslatedToolStripMenuItem.Size=new System.Drawing.Size(169, 22);
-			this.hideNontranslatedToolStripMenuItem.Text="Hide non-translated";
 			this.hideNontranslatedToolStripMenuItem.Click+=new System.EventHandler(this.hideNontranslatedToolStripMenuItem_Click);
 			// 
 			// keysToolStripMenuItem
 			// 
+			resources.ApplyResources(this.keysToolStripMenuItem, "keysToolStripMenuItem");
 			this.keysToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewKeyToolStripMenuItem,
             this.deleteKeyToolStripMenuItem});
 			this.keysToolStripMenuItem.Name="keysToolStripMenuItem";
-			this.keysToolStripMenuItem.Size=new System.Drawing.Size(42, 20);
-			this.keysToolStripMenuItem.Text="Keys";
 			// 
 			// addNewKeyToolStripMenuItem
 			// 
+			resources.ApplyResources(this.addNewKeyToolStripMenuItem, "addNewKeyToolStripMenuItem");
 			this.addNewKeyToolStripMenuItem.Name="addNewKeyToolStripMenuItem";
-			this.addNewKeyToolStripMenuItem.ShortcutKeys=((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.N)));
-			this.addNewKeyToolStripMenuItem.Size=new System.Drawing.Size(177, 22);
-			this.addNewKeyToolStripMenuItem.Text="Add New Key";
 			this.addNewKeyToolStripMenuItem.Click+=new System.EventHandler(this.addNewKeyToolStripMenuItem_Click);
 			// 
 			// deleteKeyToolStripMenuItem
 			// 
+			resources.ApplyResources(this.deleteKeyToolStripMenuItem, "deleteKeyToolStripMenuItem");
 			this.deleteKeyToolStripMenuItem.Name="deleteKeyToolStripMenuItem";
-			this.deleteKeyToolStripMenuItem.ShortcutKeys=System.Windows.Forms.Keys.Delete;
-			this.deleteKeyToolStripMenuItem.Size=new System.Drawing.Size(177, 22);
-			this.deleteKeyToolStripMenuItem.Text="Delete Key";
 			this.deleteKeyToolStripMenuItem.Click+=new System.EventHandler(this.deleteKeyToolStripMenuItem_Click);
 			// 
 			// splitContainerMain
 			// 
-			this.splitContainerMain.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.splitContainerMain.Location=new System.Drawing.Point(0, 24);
+			resources.ApplyResources(this.splitContainerMain, "splitContainerMain");
 			this.splitContainerMain.Name="splitContainerMain";
 			// 
 			// splitContainerMain.Panel1
 			// 
+			resources.ApplyResources(this.splitContainerMain.Panel1, "splitContainerMain.Panel1");
 			this.splitContainerMain.Panel1.Controls.Add(this.treeViewResx);
 			// 
 			// splitContainerMain.Panel2
 			// 
+			resources.ApplyResources(this.splitContainerMain.Panel2, "splitContainerMain.Panel2");
 			this.splitContainerMain.Panel2.Controls.Add(this.splitContainerResource);
-			this.splitContainerMain.Size=new System.Drawing.Size(946, 486);
-			this.splitContainerMain.SplitterDistance=246;
-			this.splitContainerMain.TabIndex=2;
 			// 
 			// treeViewResx
 			// 
-			this.treeViewResx.Dock=System.Windows.Forms.DockStyle.Fill;
+			resources.ApplyResources(this.treeViewResx, "treeViewResx");
 			this.treeViewResx.HideSelection=false;
-			this.treeViewResx.Location=new System.Drawing.Point(0, 0);
 			this.treeViewResx.Name="treeViewResx";
-			this.treeViewResx.Size=new System.Drawing.Size(246, 486);
-			this.treeViewResx.TabIndex=0;
 			this.treeViewResx.AfterSelect+=new System.Windows.Forms.TreeViewEventHandler(this.treeViewResx_AfterSelect);
 			this.treeViewResx.DoubleClick+=new System.EventHandler(this.treeViewResx_DoubleClick);
 			// 
 			// splitContainerResource
 			// 
-			this.splitContainerResource.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.splitContainerResource.Location=new System.Drawing.Point(0, 0);
+			resources.ApplyResources(this.splitContainerResource, "splitContainerResource");
 			this.splitContainerResource.Name="splitContainerResource";
-			this.splitContainerResource.Orientation=System.Windows.Forms.Orientation.Horizontal;
 			// 
 			// splitContainerResource.Panel1
 			// 
+			resources.ApplyResources(this.splitContainerResource.Panel1, "splitContainerResource.Panel1");
 			this.splitContainerResource.Panel1.Controls.Add(this.checkedListBoxLanguages);
 			// 
 			// splitContainerResource.Panel2
 			// 
+			resources.ApplyResources(this.splitContainerResource.Panel2, "splitContainerResource.Panel2");
 			this.splitContainerResource.Panel2.Controls.Add(this.gridResourcesStrings);
 			this.splitContainerResource.Panel2.Controls.Add(this.panelTitle);
-			this.splitContainerResource.Size=new System.Drawing.Size(696, 486);
-			this.splitContainerResource.SplitterDistance=83;
-			this.splitContainerResource.TabIndex=2;
 			// 
 			// checkedListBoxLanguages
 			// 
+			resources.ApplyResources(this.checkedListBoxLanguages, "checkedListBoxLanguages");
 			this.checkedListBoxLanguages.CheckOnClick=true;
-			this.checkedListBoxLanguages.Dock=System.Windows.Forms.DockStyle.Fill;
 			this.checkedListBoxLanguages.FormattingEnabled=true;
-			this.checkedListBoxLanguages.Location=new System.Drawing.Point(0, 0);
 			this.checkedListBoxLanguages.MultiColumn=true;
 			this.checkedListBoxLanguages.Name="checkedListBoxLanguages";
-			this.checkedListBoxLanguages.Size=new System.Drawing.Size(696, 83);
-			this.checkedListBoxLanguages.TabIndex=0;
 			this.checkedListBoxLanguages.ItemCheck+=new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxLanguages_ItemCheck);
 			// 
 			// gridResourcesStrings
 			// 
+			resources.ApplyResources(this.gridResourcesStrings, "gridResourcesStrings");
 			this.gridResourcesStrings.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.gridResourcesStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gridResourcesStrings.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.gridResourcesStrings.Location=new System.Drawing.Point(0, 35);
 			this.gridResourcesStrings.Name="gridResourcesStrings";
-			this.gridResourcesStrings.Size=new System.Drawing.Size(696, 364);
-			this.gridResourcesStrings.TabIndex=3;
 			// 
 			// panelTitle
 			// 
+			resources.ApplyResources(this.panelTitle, "panelTitle");
 			this.panelTitle.Controls.Add(this.labelTitle);
-			this.panelTitle.Dock=System.Windows.Forms.DockStyle.Top;
-			this.panelTitle.Location=new System.Drawing.Point(0, 0);
 			this.panelTitle.Name="panelTitle";
-			this.panelTitle.Size=new System.Drawing.Size(696, 35);
-			this.panelTitle.TabIndex=2;
 			// 
 			// labelTitle
 			// 
-			this.labelTitle.Anchor=((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top|System.Windows.Forms.AnchorStyles.Left)
-						|System.Windows.Forms.AnchorStyles.Right)));
-			this.labelTitle.Font=new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelTitle.Location=new System.Drawing.Point(4, 4);
+			resources.ApplyResources(this.labelTitle, "labelTitle");
 			this.labelTitle.Name="labelTitle";
-			this.labelTitle.Size=new System.Drawing.Size(689, 28);
-			this.labelTitle.TabIndex=0;
-			this.labelTitle.Text="{Title}";
-			this.labelTitle.TextAlign=System.Drawing.ContentAlignment.TopCenter;
-			// 
-			// toolStripMenuItem2
-			// 
-			this.toolStripMenuItem2.Name="toolStripMenuItem2";
-			this.toolStripMenuItem2.Size=new System.Drawing.Size(149, 6);
-			// 
-			// toolStripMenuItem3
-			// 
-			this.toolStripMenuItem3.Name="toolStripMenuItem3";
-			this.toolStripMenuItem3.Size=new System.Drawing.Size(149, 6);
-			// 
-			// hideTranslatedToolStripMenuItem
-			// 
-			this.hideTranslatedToolStripMenuItem.Name="hideTranslatedToolStripMenuItem";
-			this.hideTranslatedToolStripMenuItem.Size=new System.Drawing.Size(169, 22);
-			this.hideTranslatedToolStripMenuItem.Text="Hide translated";
 			// 
 			// FormMain
 			// 
-			this.AutoScaleDimensions=new System.Drawing.SizeF(6F, 13F);
+			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize=new System.Drawing.Size(946, 510);
 			this.Controls.Add(this.splitContainerMain);
-			this.Controls.Add(this.menuStripMain);
-			this.Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.MainMenuStrip=this.menuStripMain;
+			this.Controls.Add(this.menuStrip);
+			this.MainMenuStrip=this.menuStrip;
 			this.Name="FormMain";
-			this.StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text="Vertimas";
 			this.WindowState=System.Windows.Forms.FormWindowState.Maximized;
 			this.FormClosing+=new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-			this.menuStripMain.ResumeLayout(false);
-			this.menuStripMain.PerformLayout();
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
 			this.splitContainerMain.Panel1.ResumeLayout(false);
 			this.splitContainerMain.Panel2.ResumeLayout(false);
 			this.splitContainerMain.ResumeLayout(false);
@@ -284,7 +240,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.MenuStrip menuStripMain;
+		private System.Windows.Forms.MenuStrip menuStrip;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;

@@ -8,6 +8,11 @@ using System.IO;
 using System.Xml;
 using System.Windows.Forms;
 
+//TODO Pfade merken
+//TODO Filtwer Funktionen
+//TODO Icon
+//Fehlererkennung wieder aktivieren
+//TODO About Dialog
 //TODO Löschen von Keys funktioniert nicht
 namespace Vertimas
 {
