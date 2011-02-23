@@ -1,6 +1,6 @@
 ﻿namespace Vertimas
 {
-	partial class MainForm
+	partial class FormMain
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -44,7 +44,7 @@
 			this.treeViewResx=new System.Windows.Forms.TreeView();
 			this.splitContainerResource=new System.Windows.Forms.SplitContainer();
 			this.checkedListBoxLanguages=new System.Windows.Forms.CheckedListBox();
-			this.gridEXStrings=new System.Windows.Forms.DataGridView();
+			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
 			this.panelTitle=new System.Windows.Forms.Panel();
 			this.labelTitle=new System.Windows.Forms.Label();
 			this.menuStripMain.SuspendLayout();
@@ -54,7 +54,7 @@
 			this.splitContainerResource.Panel1.SuspendLayout();
 			this.splitContainerResource.Panel2.SuspendLayout();
 			this.splitContainerResource.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gridEXStrings)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridResourcesStrings)).BeginInit();
 			this.panelTitle.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -196,7 +196,7 @@
 			// 
 			// splitContainerResource.Panel2
 			// 
-			this.splitContainerResource.Panel2.Controls.Add(this.gridEXStrings);
+			this.splitContainerResource.Panel2.Controls.Add(this.gridResourcesStrings);
 			this.splitContainerResource.Panel2.Controls.Add(this.panelTitle);
 			this.splitContainerResource.Size=new System.Drawing.Size(696, 486);
 			this.splitContainerResource.SplitterDistance=83;
@@ -216,12 +216,12 @@
 			// 
 			// gridEXStrings
 			// 
-			this.gridEXStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gridEXStrings.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.gridEXStrings.Location=new System.Drawing.Point(0, 35);
-			this.gridEXStrings.Name="gridEXStrings";
-			this.gridEXStrings.Size=new System.Drawing.Size(696, 364);
-			this.gridEXStrings.TabIndex=3;
+			this.gridResourcesStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridResourcesStrings.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.gridResourcesStrings.Location=new System.Drawing.Point(0, 35);
+			this.gridResourcesStrings.Name="gridEXStrings";
+			this.gridResourcesStrings.Size=new System.Drawing.Size(696, 364);
+			this.gridResourcesStrings.TabIndex=3;
 			// 
 			// panelTitle
 			// 
@@ -266,7 +266,7 @@
 			this.splitContainerResource.Panel1.ResumeLayout(false);
 			this.splitContainerResource.Panel2.ResumeLayout(false);
 			this.splitContainerResource.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.gridEXStrings)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridResourcesStrings)).EndInit();
 			this.panelTitle.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -294,7 +294,7 @@
         private System.Windows.Forms.ToolStripMenuItem addNewKeyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteKeyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-		private System.Windows.Forms.DataGridView gridEXStrings;
+		private System.Windows.Forms.DataGridView gridResourcesStrings;
 	}
 }
 

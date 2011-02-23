@@ -4,14 +4,13 @@ using System.Text;
 
 namespace Vertimas
 {
-    public static class Common
-    {
-        public static string GetDefaultValue(string key)
-        {
-            return string.Format(
-                Properties.Settings.Default.NonTranslatedString,
-                key, key.ToUpper(), key.ToLower());
-        }
+	public static class Common
+	{
+		readonly static string NonTranslatedString="[{0}]";
 
-    }
+		public static string GetDefaultValue(string key)
+		{
+			return string.Format(NonTranslatedString, key, key.ToUpper(), key.ToLower());
+		}
+	}
 }

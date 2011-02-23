@@ -12,14 +12,11 @@ namespace Vertimas
 	{
 		private ResourceHolder resourceHolder;
 
-
 		public AddKey(ResourceHolder resourceHolder)
 		{
 			InitializeComponent();
-
 			this.resourceHolder=resourceHolder;
 		}
-
 
 		public string Key
 		{
@@ -29,7 +26,6 @@ namespace Vertimas
 			}
 		}
 
-
 		public string NoXlateValue
 		{
 			get
@@ -37,7 +33,6 @@ namespace Vertimas
 				return txtNoXlateValue.Text;
 			}
 		}
-
 
 		public string DefaultValue
 		{
@@ -49,12 +44,13 @@ namespace Vertimas
 
 		private void txtKey_TextChanged(object sender, EventArgs e)
 		{
-			txtDefaultValue.Text=
-			txtNoXlateValue.Text=Common.GetDefaultValue(txtKey.Text);
+			txtDefaultValue.Text=txtNoXlateValue.Text=Common.GetDefaultValue(txtKey.Text);
 
 			string error=null;
 			if(resourceHolder.KeyExists(txtKey.Text))
+			{
 				error="Key exists";
+			}
 
 			errorProvider.SetError(txtKey, error);
 
