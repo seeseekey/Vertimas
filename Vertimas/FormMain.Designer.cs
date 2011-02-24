@@ -43,6 +43,7 @@
 			this.keysToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.addNewKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.helpToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip=new System.Windows.Forms.ToolStrip();
 			this.statusStrip=new System.Windows.Forms.StatusStrip();
 			this.tslEntryCount=new System.Windows.Forms.ToolStripStatusLabel();
@@ -53,6 +54,7 @@
 			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
 			this.panelTitle=new System.Windows.Forms.Panel();
 			this.labelTitle=new System.Windows.Forms.Label();
+			this.aboutToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
@@ -70,7 +72,8 @@
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.settingsToolStripMenuItem,
-            this.keysToolStripMenuItem});
+            this.keysToolStripMenuItem,
+            this.helpToolStripMenuItem});
 			resources.ApplyResources(this.menuStrip, "menuStrip");
 			this.menuStrip.Name="menuStrip";
 			this.menuStrip.MenuActivate+=new System.EventHandler(this.menuStrip_MenuActivate);
@@ -161,6 +164,13 @@
 			resources.ApplyResources(this.deleteKeyToolStripMenuItem, "deleteKeyToolStripMenuItem");
 			this.deleteKeyToolStripMenuItem.Click+=new System.EventHandler(this.deleteKeyToolStripMenuItem_Click);
 			// 
+			// helpToolStripMenuItem
+			// 
+			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+			this.helpToolStripMenuItem.Name="helpToolStripMenuItem";
+			resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+			// 
 			// toolStrip
 			// 
 			resources.ApplyResources(this.toolStrip, "toolStrip");
@@ -244,6 +254,12 @@
 			resources.ApplyResources(this.labelTitle, "labelTitle");
 			this.labelTitle.Name="labelTitle";
 			// 
+			// aboutToolStripMenuItem
+			// 
+			this.aboutToolStripMenuItem.Name="aboutToolStripMenuItem";
+			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+			this.aboutToolStripMenuItem.Click+=new System.EventHandler(this.aboutToolStripMenuItem_Click);
+			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -301,6 +317,8 @@
 		private System.Windows.Forms.Label labelTitle;
 		private System.Windows.Forms.ToolStripMenuItem showAllToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel tslEntryCount;
+		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 	}
 }
 

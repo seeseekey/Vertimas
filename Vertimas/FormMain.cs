@@ -634,5 +634,11 @@ namespace Vertimas
 			filterMode=FilterMode.HideNonTranslated;
 			ApplyFilterCondition();
 		}
+
+		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FormAbout InstFormAbout=new FormAbout();
+			InstFormAbout.ShowDialog();
+		}
     }
 }
