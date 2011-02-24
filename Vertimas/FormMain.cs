@@ -246,7 +246,7 @@ namespace Vertimas
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Exception while saving: " + resource.Id);
+                    MessageBox.Show(ex.Message, Translate.ExceptionWhileSaving + resource.Id, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -461,7 +461,7 @@ namespace Vertimas
 
             if (isDirty)
             {
-				if(MessageBox.Show(Translate.WouldYouSaveYourUnsavedFiles, Translate.SaveFiles, MessageBoxButtons.YesNoCancel)==DialogResult.No)
+				if(MessageBox.Show(Translate.WouldYouSaveYourUnsavedFiles, Translate.SaveFiles, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)==DialogResult.No)
 				{
 					return true;
 				}
@@ -506,7 +506,7 @@ namespace Vertimas
 				return;
 			}
 
-			if(MessageBox.Show(Translate.AreYouSureYouWantToDeleteTheCurrentKey, Translate.DeleteKey, MessageBoxButtons.YesNoCancel)==DialogResult.Yes)
+			if(MessageBox.Show(Translate.AreYouSureYouWantToDeleteTheCurrentKey, Translate.DeleteKey, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)==DialogResult.Yes)
 			{
 				DataGridViewRow dataRow=gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex]; //Selektierte Row ermitteln
 				gridResourcesStrings.Rows.Remove(dataRow); //Row löschen

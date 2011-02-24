@@ -88,6 +88,15 @@ namespace Vertimas.Translation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exception while saving: .
+        /// </summary>
+        internal static string ExceptionWhileSaving {
+            get {
+                return ResourceManager.GetString("ExceptionWhileSaving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse to the root of the project, typically where the sln file is.
         /// </summary>
         internal static string FolderDialogDescription {

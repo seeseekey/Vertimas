@@ -31,7 +31,7 @@ namespace Vertimas
 		{
 			get
 			{
-				return txtNoXlateValue.Text;
+				return txtNeutralValue.Text;
 			}
 		}
 
@@ -45,7 +45,7 @@ namespace Vertimas
 
 		private void txtKey_TextChanged(object sender, EventArgs e)
 		{
-			txtDefaultValue.Text=txtNoXlateValue.Text=Common.GetDefaultValue(txtKey.Text);
+			txtDefaultValue.Text=txtNeutralValue.Text=Common.GetDefaultValue(txtKey.Text);
 
 			string error=null;
 			if(resourceHolder.KeyExists(txtKey.Text))
