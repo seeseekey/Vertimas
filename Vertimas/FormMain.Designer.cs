@@ -244,6 +244,7 @@
 			this.gridResourcesStrings.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.gridResourcesStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			resources.ApplyResources(this.gridResourcesStrings, "gridResourcesStrings");
+			this.gridResourcesStrings.MultiSelect=false;
 			this.gridResourcesStrings.Name="gridResourcesStrings";
 			this.gridResourcesStrings.SelectionMode=System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.gridResourcesStrings.DataSourceChanged+=new System.EventHandler(this.gridResourcesStrings_DataSourceChanged);
