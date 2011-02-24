@@ -193,4 +193,10 @@
   <data name="labelTitle.Text" xml:space="preserve">
     <value>{Titel}	</value>
   </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Über...</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Hilfe</value>
+  </data>
 </root>

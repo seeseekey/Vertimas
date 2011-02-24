@@ -101,6 +101,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Translate.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAbout.de.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
