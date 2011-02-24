@@ -79,7 +79,7 @@ namespace Vertimas.Translation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entry count: {0}.
+        ///   Looks up a localized string similar to Entry count: {0} (Visible: {1}).
         /// </summary>
         internal static string EntryCount {
             get {

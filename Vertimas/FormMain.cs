@@ -13,11 +13,8 @@ using Vertimas.Translation;
 using Vertimas.Enums;
 
 //TODO Pfade merken
-//TODO Filtwer Funktionen
-//TODO Statusleiste
 //TODO Iconleiste
 //TODO About Dialog
-//TODO Löschen von Keys funktioniert nicht
 //TODO Google Translate Integration
 //TODO Ladefortschritt
 //TODO Key Spalte schreibgeschützt falls die Probleme mit dem Umbennen bleiben
@@ -29,6 +26,7 @@ namespace Vertimas
         private Dictionary<string, ResourceHolder> resources;
         private ResourceHolder currentResource;
 		private FilterMode filterMode=FilterMode.ShowAll;
+		private int visibleCount=0;
 
         public FormMain()
         {
@@ -53,6 +51,7 @@ namespace Vertimas
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
 
             folderDialog.SelectedPath = rootPath;
+	
             folderDialog.Description = Translate.FolderDialogDescription;
 
 			if(folderDialog.ShowDialog()==DialogResult.OK)
@@ -384,8 +383,15 @@ namespace Vertimas
 				if(found) break;
 			}
 
+			if(firstVisibleEntry==-1)
+			{
+				tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
+				return;
+			}
+
 			gridResourcesStrings.Rows[firstVisibleEntry].Visible=true;
 			gridResourcesStrings.CurrentCell=gridResourcesStrings.Rows[firstVisibleEntry].Cells[0];
+			visibleCount=0;
 
 			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
 			{
@@ -401,6 +407,7 @@ namespace Vertimas
 					case FilterMode.ShowAll:
 						{
 							gridResourcesStrings.Rows[rowCounter].Visible=true;
+							visibleCount++;
 							break;
 						}
 					case FilterMode.HideTranslated:
@@ -412,6 +419,7 @@ namespace Vertimas
 							else
 							{
 								gridResourcesStrings.Rows[rowCounter].Visible=true;
+								visibleCount++;
 							}
 
 							break;
@@ -421,6 +429,7 @@ namespace Vertimas
 							if(Translated)
 							{
 								gridResourcesStrings.Rows[rowCounter].Visible=true;
+								visibleCount++;
 							}
 							else
 							{
@@ -433,7 +442,7 @@ namespace Vertimas
 			}
 			#endregion
 
-			tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count);
+			tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
 		}
 
         /// <summary>

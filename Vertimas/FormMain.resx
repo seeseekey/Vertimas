@@ -249,10 +249,10 @@
     <value>218, 17</value>
   </metadata>
   <data name="tslEntryCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+    <value>129, 17</value>
   </data>
   <data name="tslEntryCount.Text" xml:space="preserve">
-    <value>Entry count: 0</value>
+    <value>Entry count: 0 (Visible: 0)</value>
   </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 488</value>
@@ -655,6 +655,12 @@
   <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;showAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>showAllToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;showAllToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;hideTranslatedToolStripMenuItem.Name" xml:space="preserve">
     <value>hideTranslatedToolStripMenuItem</value>
   </data>
@@ -683,12 +689,6 @@
     <value>deleteKeyToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;deleteKeyToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;showAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>showAllToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;showAllToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tslEntryCount.Name" xml:space="preserve">

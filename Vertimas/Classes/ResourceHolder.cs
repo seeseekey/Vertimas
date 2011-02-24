@@ -63,6 +63,7 @@ namespace Vertimas.Classes
 
 			HashSet<string> usedKeys=new HashSet<string>();
 			List<XmlNode> nodesToBeDeleted=new List<XmlNode>();
+
 			foreach(XmlNode dataNode in xmlDoc.SelectNodes("/root/data"))
 			{
 				if(dataNode.Attributes["type"]!=null)
@@ -80,91 +81,95 @@ namespace Vertimas.Classes
 				string key=dataNode.Attributes["name"].Value;
 				DataRow[] rows=stringsTable.Select("Key = '"+key+"'");
 
-				if(rows.Length>0)
+				if(rows.Length==0)
 				{
-					bool anyData=false;
-					if(rows[0][valueColumn]==DBNull.Value||string.IsNullOrEmpty((string)rows[0][valueColumn]))
-					{
-						// Delete value
-						foreach(XmlNode childNode in dataNode.ChildNodes)
-						{
-							if(childNode.Name=="value")
-							{
-								childNode.InnerText="";
-								break;
-							}
-						}
-					}
-					else
-					{
-						// Add/update
-						anyData=true;
-						bool found=false;
-
-						foreach(XmlNode childNode in dataNode.ChildNodes)
-						{
-							if(childNode.Name=="value")
-							{
-								childNode.InnerText=(string)rows[0][valueColumn];
-								found=true;
-								break;
-							}
-						}
-
-						if(!found)
-						{
-							// Add
-							XmlNode newNode=xmlDoc.CreateElement("value");
-							newNode.InnerText=(string)rows[0][valueColumn];
-							dataNode.AppendChild(newNode);
-						}
-					}
-
-					if(rows[0]["Comment"]==DBNull.Value||string.IsNullOrEmpty((string)rows[0]["Comment"]))
-					{
-						// Delete comment
-						foreach(XmlNode childNode in dataNode.ChildNodes)
-						{
-							if(childNode.Name=="comment")
-							{
-								dataNode.RemoveChild(childNode);
-								break;
-							}
-						}
-					}
-					else
-					{
-						// Add/update
-						anyData=true;
-						bool found=false;
-
-						foreach(XmlNode childNode in dataNode.ChildNodes)
-						{
-							if(childNode.Name=="comment")
-							{
-								childNode.InnerText=(string)rows[0]["Comment"];
-								found=true;
-								break;
-							}
-						}
-
-						if(!found)
-						{
-							// Add
-							XmlNode newNode=xmlDoc.CreateElement("comment");
-							newNode.InnerText=(string)rows[0]["Comment"];
-							dataNode.AppendChild(newNode);
-						}
-					}
-
-					if(!anyData)
-					{
-						// Remove
-						nodesToBeDeleted.Add(dataNode);
-					}
-
-					usedKeys.Add(key);
+					// Remove
+					nodesToBeDeleted.Add(dataNode);
+					continue;
 				}
+
+				bool anyData=false;
+				if(rows[0][valueColumn]==DBNull.Value||string.IsNullOrEmpty((string)rows[0][valueColumn]))
+				{
+					// Delete value
+					foreach(XmlNode childNode in dataNode.ChildNodes)
+					{
+						if(childNode.Name=="value")
+						{
+							childNode.InnerText="";
+							break;
+						}
+					}
+				}
+				else
+				{
+					// Add/update
+					anyData=true;
+					bool found=false;
+
+					foreach(XmlNode childNode in dataNode.ChildNodes)
+					{
+						if(childNode.Name=="value")
+						{
+							childNode.InnerText=(string)rows[0][valueColumn];
+							found=true;
+							break;
+						}
+					}
+
+					if(!found)
+					{
+						// Add
+						XmlNode newNode=xmlDoc.CreateElement("value");
+						newNode.InnerText=(string)rows[0][valueColumn];
+						dataNode.AppendChild(newNode);
+					}
+				}
+
+				if(rows[0]["Comment"]==DBNull.Value||string.IsNullOrEmpty((string)rows[0]["Comment"]))
+				{
+					// Delete comment
+					foreach(XmlNode childNode in dataNode.ChildNodes)
+					{
+						if(childNode.Name=="comment")
+						{
+							dataNode.RemoveChild(childNode);
+							break;
+						}
+					}
+				}
+				else
+				{
+					// Add/update
+					anyData=true;
+					bool found=false;
+
+					foreach(XmlNode childNode in dataNode.ChildNodes)
+					{
+						if(childNode.Name=="comment")
+						{
+							childNode.InnerText=(string)rows[0]["Comment"];
+							found=true;
+							break;
+						}
+					}
+
+					if(!found)
+					{
+						// Add
+						XmlNode newNode=xmlDoc.CreateElement("comment");
+						newNode.InnerText=(string)rows[0]["Comment"];
+						dataNode.AppendChild(newNode);
+					}
+				}
+
+				if(!anyData)
+				{
+					// Remove
+					nodesToBeDeleted.Add(dataNode);
+				}
+
+				usedKeys.Add(key);
 			}
 
 			XmlNode rootNode=xmlDoc.SelectSingleNode("/root");
@@ -177,46 +182,45 @@ namespace Vertimas.Classes
 			foreach(DataRow row in stringsTable.Rows)
 			{
 				string key=(string)row["Key"];
-				if(!usedKeys.Contains(key))
+				if(usedKeys.Contains(key)) continue;
+
+				// Add
+				XmlNode newNode=xmlDoc.CreateElement("data");
+				XmlAttribute newAttribute=xmlDoc.CreateAttribute("name");
+				newAttribute.Value=key;
+				newNode.Attributes.Append(newAttribute);
+
+				newAttribute=xmlDoc.CreateAttribute("xml:space");
+				newAttribute.Value="preserve";
+				newNode.Attributes.Append(newAttribute);
+
+				bool anyData=false;
+
+				if(row["Comment"]!=DBNull.Value&&!string.IsNullOrEmpty((string)row["Comment"]))
 				{
-					// Add
-					XmlNode newNode=xmlDoc.CreateElement("data");
-					XmlAttribute newAttribute=xmlDoc.CreateAttribute("name");
-					newAttribute.Value=key;
-					newNode.Attributes.Append(newAttribute);
+					XmlNode newComment=xmlDoc.CreateElement("comment");
+					newComment.InnerText=(string)row["Comment"];
+					newNode.AppendChild(newComment);
+					anyData=true;
+				}
 
-					newAttribute=xmlDoc.CreateAttribute("xml:space");
-					newAttribute.Value="preserve";
-					newNode.Attributes.Append(newAttribute);
+				if(row[valueColumn]!=DBNull.Value&&!string.IsNullOrEmpty((string)row[valueColumn]))
+				{
+					XmlNode newValue=xmlDoc.CreateElement("value");
+					newValue.InnerText=(string)row[valueColumn];
+					newNode.AppendChild(newValue);
+					anyData=true;
+				}
+				else if(anyData)
+				{
+					XmlNode newValue=xmlDoc.CreateElement("value");
+					newValue.InnerText="";
+					newNode.AppendChild(newValue);
+				}
 
-					bool anyData=false;
-
-					if(row["Comment"]!=DBNull.Value&&!string.IsNullOrEmpty((string)row["Comment"]))
-					{
-						XmlNode newComment=xmlDoc.CreateElement("comment");
-						newComment.InnerText=(string)row["Comment"];
-						newNode.AppendChild(newComment);
-						anyData=true;
-					}
-
-					if(row[valueColumn]!=DBNull.Value&&!string.IsNullOrEmpty((string)row[valueColumn]))
-					{
-						XmlNode newValue=xmlDoc.CreateElement("value");
-						newValue.InnerText=(string)row[valueColumn];
-						newNode.AppendChild(newValue);
-						anyData=true;
-					}
-					else if(anyData)
-					{
-						XmlNode newValue=xmlDoc.CreateElement("value");
-						newValue.InnerText="";
-						newNode.AppendChild(newValue);
-					}
-
-					if(anyData)
-					{
-						xmlDoc.SelectSingleNode("/root").AppendChild(newNode);
-					}
+				if(anyData)
+				{
+					xmlDoc.SelectSingleNode("/root").AppendChild(newNode);
 				}
 			}
 

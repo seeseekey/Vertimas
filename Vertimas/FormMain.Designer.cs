@@ -37,6 +37,7 @@
 			this.toolStripMenuItem3=new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.showAllToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.hideTranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.hideNontranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.keysToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,7 @@
 			this.deleteKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip=new System.Windows.Forms.ToolStrip();
 			this.statusStrip=new System.Windows.Forms.StatusStrip();
+			this.tslEntryCount=new System.Windows.Forms.ToolStripStatusLabel();
 			this.splitContainerMain=new System.Windows.Forms.SplitContainer();
 			this.treeViewResx=new System.Windows.Forms.TreeView();
 			this.splitContainerResource=new System.Windows.Forms.SplitContainer();
@@ -51,8 +53,6 @@
 			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
 			this.panelTitle=new System.Windows.Forms.Panel();
 			this.labelTitle=new System.Windows.Forms.Label();
-			this.showAllToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-			this.tslEntryCount=new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
@@ -123,6 +123,12 @@
 			this.settingsToolStripMenuItem.Name="settingsToolStripMenuItem";
 			resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
 			// 
+			// showAllToolStripMenuItem
+			// 
+			this.showAllToolStripMenuItem.Name="showAllToolStripMenuItem";
+			resources.ApplyResources(this.showAllToolStripMenuItem, "showAllToolStripMenuItem");
+			this.showAllToolStripMenuItem.Click+=new System.EventHandler(this.showAllToolStripMenuItem_Click);
+			// 
 			// hideTranslatedToolStripMenuItem
 			// 
 			this.hideTranslatedToolStripMenuItem.Name="hideTranslatedToolStripMenuItem";
@@ -166,6 +172,11 @@
             this.tslEntryCount});
 			resources.ApplyResources(this.statusStrip, "statusStrip");
 			this.statusStrip.Name="statusStrip";
+			// 
+			// tslEntryCount
+			// 
+			this.tslEntryCount.Name="tslEntryCount";
+			resources.ApplyResources(this.tslEntryCount, "tslEntryCount");
 			// 
 			// splitContainerMain
 			// 
@@ -232,17 +243,6 @@
 			// 
 			resources.ApplyResources(this.labelTitle, "labelTitle");
 			this.labelTitle.Name="labelTitle";
-			// 
-			// showAllToolStripMenuItem
-			// 
-			this.showAllToolStripMenuItem.Name="showAllToolStripMenuItem";
-			resources.ApplyResources(this.showAllToolStripMenuItem, "showAllToolStripMenuItem");
-			this.showAllToolStripMenuItem.Click+=new System.EventHandler(this.showAllToolStripMenuItem_Click);
-			// 
-			// tslEntryCount
-			// 
-			this.tslEntryCount.Name="tslEntryCount";
-			resources.ApplyResources(this.tslEntryCount, "tslEntryCount");
 			// 
 			// FormMain
 			// 
