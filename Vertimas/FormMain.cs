@@ -18,6 +18,7 @@ using Vertimas.Enums;
 //TODO Google Translate Integration
 //TODO Ladefortschritt
 //TODO Key Spalte schreibgeschützt falls die Probleme mit dem Umbennen bleiben
+//TODO Sprachen als ICON
 namespace Vertimas
 {
     public partial class FormMain : Form
@@ -51,7 +52,6 @@ namespace Vertimas
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
 
             folderDialog.SelectedPath = rootPath;
-	
             folderDialog.Description = Translate.FolderDialogDescription;
 
 			if(folderDialog.ShowDialog()==DialogResult.OK)
@@ -73,7 +73,7 @@ namespace Vertimas
 		private void BuildTreeView(ResourceHolder resource)
 		{
 			TreeNode parentNode=null;
-			string[] topFolders=resource.DisplayFolder.Split('\\');
+			string[] topFolders=resource.DisplayFolder.Split(new char[] {'\\'}, StringSplitOptions.RemoveEmptyEntries);
 
 			foreach(string subFolder in topFolders)
 			{
@@ -113,13 +113,11 @@ namespace Vertimas
 
 			if(folder.StartsWith(rootPath, StringComparison.InvariantCultureIgnoreCase))
 			{
-				displayFolder=folder.Substring(rootPath.Length);
+				FileInfo root=new FileInfo(rootPath.Trim('\\','/'));
+				displayFolder=root.Name+folder.Substring(rootPath.Length);
 			}
 
-			if(displayFolder.StartsWith("\\"))
-			{
-				displayFolder=displayFolder.Remove(0, 1);
-			}
+			displayFolder.TrimStart('\\', '/');
 
             string[] files = Directory.GetFiles(folder, "*.resx");
 

@@ -229,7 +229,7 @@ namespace Vertimas.Classes
 
 		public void Save()
 		{
-			UpdateFile(Filename, "NoLanguageValue");
+			UpdateFile(Filename, "Neutral");
 
 			foreach(LanguageHolder languageHolder in Languages.Values)
 			{
@@ -322,7 +322,7 @@ namespace Vertimas.Classes
 				return;
 			}
 
-			if(foundOne&&(row["NoLanguageValue"]==DBNull.Value||string.IsNullOrEmpty((string)row["NoLanguageValue"])))
+			if(foundOne&&(row["Neutral"]==DBNull.Value||string.IsNullOrEmpty((string)row["Neutral"])))
 			{
 				row["Error"]=true;
 				return;
@@ -336,7 +336,7 @@ namespace Vertimas.Classes
 			stringsTable=new DataTable("Strings");
 
 			stringsTable.Columns.Add("Key");
-			stringsTable.Columns.Add("NoLanguageValue");
+			stringsTable.Columns.Add("Neutral");
 
 			foreach(LanguageHolder languageHolder in Languages.Values)
 			{
@@ -349,7 +349,7 @@ namespace Vertimas.Classes
 
 			if(!string.IsNullOrEmpty(Filename))
 			{
-				ReadResourceFile(Filename, stringsTable, "NoLanguageValue", false);
+				ReadResourceFile(Filename, stringsTable, "Neutral", false);
 			}
 
 			foreach(LanguageHolder languageHolder in Languages.Values)
@@ -393,7 +393,7 @@ namespace Vertimas.Classes
 			DataRow row=stringsTable.NewRow();
 
 			row["Key"]=key;
-			row["NoLanguageValue"]=noXlateValue;
+			row["Neutral"]=noXlateValue;
 
 			foreach(LanguageHolder languageHolder in Languages.Values)
 			{
