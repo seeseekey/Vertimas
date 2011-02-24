@@ -462,12 +462,26 @@ namespace Vertimas
 
             if (isDirty)
             {
-				if(MessageBox.Show(Translate.WouldYouSaveYourUnsavedFiles, Translate.SaveFiles, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)==DialogResult.No)
+				switch(MessageBox.Show(Translate.WouldYouSaveYourUnsavedFiles, Translate.SaveFiles, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
 				{
-					return true;
+					case System.Windows.Forms.DialogResult.Yes:
+						{
+							saveToolStripMenuItem_Click(null, null);
+							return true;
+						}
+					case System.Windows.Forms.DialogResult.No:
+						{
+							return true;
+						}
+					case System.Windows.Forms.DialogResult.Cancel:
+						{
+							return false;
+						}
+					default:
+						{
+							throw new NotImplementedException();
+						}
 				}
-
-                return false;
             }
 
             return true;

@@ -48,6 +48,7 @@ namespace Vertimas
 			txtDefaultValue.Text=txtNeutralValue.Text=Common.GetDefaultValue(txtKey.Text);
 
 			string error=null;
+
 			if(resourceHolder.KeyExists(txtKey.Text))
 			{
 				error="Key exists";
