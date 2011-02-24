@@ -27,7 +27,7 @@ namespace Vertimas
 			}
 		}
 
-		public string NoXlateValue
+		public string NeutralValue
 		{
 			get
 			{

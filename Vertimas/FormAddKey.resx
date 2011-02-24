@@ -117,6 +117,403 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelDefaultValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>442, 103</value>
+  </data>
+  <data name="labelNoXlateValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 26</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtDefaultValue.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtNoXlateValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 29</value>
+  </data>
+  <data name="labelDefaultValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="txtKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelNoXlateValue.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelKey.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormAddKey</value>
+  </data>
+  <data name="labelDefaultValue.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelDefaultValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnAdd.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelDefaultValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 26</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnAdd.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel.Name" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txtDefaultValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtNoXlateValue.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="txtKey.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtDefaultValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="labelDefaultValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultValue.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="labelKey.Text" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="&gt;&gt;txtNoXlateValue.Name" xml:space="preserve">
+    <value>txtNoXlateValue</value>
+  </data>
+  <data name="tableLayoutPanel.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>364, 3</value>
+  </data>
+  <data name="&gt;&gt;txtKey.Name" xml:space="preserve">
+    <value>txtKey</value>
+  </data>
+  <data name="labelKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtKey.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtDefaultValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 20</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelNoXlateValue.Text" xml:space="preserve">
+    <value>Neutral Value</value>
+  </data>
+  <data name="txtKey.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;labelNoXlateValue.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="labelDefaultValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelNoXlateValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelKey" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelNoXlateValue" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtKey" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtNoXlateValue" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnAdd" Row="0" RowSpan="2" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelDefaultValue" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtDefaultValue" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,82,Absolute,268,Percent,100" /&gt;&lt;Rows Styles="Absolute,26,Absolute,26,Absolute,26,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;txtKey.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelKey.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="labelKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelKey.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="labelNoXlateValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="txtNoXlateValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelNoXlateValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelDefaultValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
+  </data>
+  <data name="txtDefaultValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelDefaultValue.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtDefaultValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 55</value>
+  </data>
+  <data name="labelNoXlateValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 26</value>
+  </data>
+  <data name="&gt;&gt;labelNoXlateValue.Name" xml:space="preserve">
+    <value>labelNoXlateValue</value>
+  </data>
+  <data name="tableLayoutPanel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelNoXlateValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtDefaultValue.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labelKey.Name" xml:space="preserve">
+    <value>labelKey</value>
+  </data>
+  <data name="tableLayoutPanel.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtDefaultValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNoXlateValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>442, 103</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDefaultValue.Name" xml:space="preserve">
+    <value>labelDefaultValue</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBEREQYMzMzXTIy
+        MiExMTEAMjIyADExMQAyMjIAMjIyADAwMAAxMTEAMjIyADMzMwAuLi4AKysrACsrKwArKysAKysrACsr
+        KwArKysALy8vKjMzM7szMzPjMTExmjQ0NA41NTUANTU1ADU1NQA1NTUA////AP///wD///8A////ADQ0
+        NKszMzP/MzMz3zIyMkkyMjIAMTExADIyMgAyMjIAMDAwADExMQAyMjIAMzMzADU1NQA0NDQANDQ0ADQ0
+        NAA0NDQANDQ0ADQ0NAQzMzO7MzMz/zMzM/8zMzP/NDQ0ezMzMwAzMzMAMzMzADMzMwD///8A////AP//
+        /wD///8AMzMz0DMzM/8zMzP/MzMz+DIyMnIxMTEAMjIyADIyMgAwMDAAMTExADIyMgAzMzMANDQ0ADEx
+        MQAwMDAAMDAwADAwMAAwMDAAMTExCjMzM+YzMzP/MzMz/zMzM/8xMTGqMTExADExMQAxMTEAMTExAP//
+        /wD///8A////AP///wAzMzPOMzMz/zIyMv8yMjL/MzMz/zMzM6QxMTETMjIyADAwMAAxMTEAMjIyADMz
+        MwA0NDQAMDAwAC4uLgAuLi4ALi4uAC4uLgAuLi4CMTExoDMzM/8zMzP/MzMz/zc3N2I4ODgANzc3ADg4
+        OAA4ODgA////AP///wD///8A////ADMzM88yMjL/Nzc3/zMzM/8wMDD/MzMz/zIyMskyMjIuMDAwADEx
+        MQAyMjIAMzMzADQ0NAAyMjIAMjIyADAwMAAwMDAAMDAwADAwMAAxMTEUMzMzlTIyMr40NDR0UFBQAlZW
+        VgBVVVUAV1dXAFhYWAD///8A////AP///wD///8AMzMz0jAwMP9LS0v/hoaG/z4+Pv8tLS3/MzMz/zMz
+        M+kyMjJaMTExADIyMgAzMzMANDQ0ADMzMwAzMzMAQkJCAElJSQBJSUkASUlJAEVFRQAzMzMAMTExEjY2
+        NgBUVFQAWVlZAFNTUwA+Pj4AIyMjAP///wD///8A////AP///wAzMzPULy8v/0pKSv+3t7f/oaGh/01N
+        Tf8rKyv/MjIy/zMzM/8yMjKCMjIyAzMzMwA0NDQAMzMzADMzMwBDQ0MASkpKAEpKSgBKSkoARkZGJTMz
+        M8EzMzPpNTU1nEdHRwpISEgARUVFAC0tLQAAAAAA////AP///wD///8A////ADMzM9YvLy//S0tL/7Cw
+        sP+7u7v/r6+v/2NjY/8tLS3/MDAw/zMzM/8yMjKxNDQ0HTQ0NAAzMzMAMzMzADMzMwAyMjIAMzMzADIy
+        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
+        M3czMzNMMjIyDzMzMwAzMzMAMzMzAP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A//////////////////////////////x/x//4f8P/+D/A//h/wH/8/8A/
+        ///AD/x/wAf4f8AD+D/AAfgPwAD4B8AA/AfAA/8DwAf/g8APx4PAH4ODwH/AA8D/wAfB/+APw//wH8//
+        /v////////////////////////////////8=
+</value>
+  </data>
+  <data name="txtKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtDefaultValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 46</value>
+  </data>
+  <data name="txtNoXlateValue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnAdd.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add new key</value>
+  </data>
+  <data name="txtKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 20</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;labelDefaultValue.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="tableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelDefaultValue.Text" xml:space="preserve">
+    <value>Default Value</value>
+  </data>
+  <data name="labelNoXlateValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="labelKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtKey.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="txtNoXlateValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="btnAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="labelDefaultValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 52</value>
+  </data>
+  <data name="&gt;&gt;txtNoXlateValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtNoXlateValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelKey.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtNoXlateValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 20</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="labelNoXlateValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultValue.Name" xml:space="preserve">
+    <value>txtDefaultValue</value>
+  </data>
+  <data name="&gt;&gt;labelNoXlateValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtNoXlateValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

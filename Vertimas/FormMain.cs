@@ -494,7 +494,7 @@ namespace Vertimas
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     // Add key
-                    currentResource.AddString(form.Key, form.NoXlateValue, form.DefaultValue);
+                    currentResource.AddString(form.Key, form.NeutralValue, form.DefaultValue);
                 }
             }
         }

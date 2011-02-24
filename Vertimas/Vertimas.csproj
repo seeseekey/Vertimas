@@ -90,6 +90,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Translate.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAddKey.de.resx">
+      <DependentUpon>FormAddKey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddKey.resx">
       <DependentUpon>FormAddKey.cs</DependentUpon>
     </EmbeddedResource>

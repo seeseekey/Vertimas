@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAdd.Error" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAdd.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAdd.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBEREQYMzMzXTIy
+        MiExMTEAMjIyADExMQAyMjIAMjIyADAwMAAxMTEAMjIyADMzMwAuLi4AKysrACsrKwArKysAKysrACsr
+        KwArKysALy8vKjMzM7szMzPjMTExmjQ0NA41NTUANTU1ADU1NQA1NTUA////AP///wD///8A////ADQ0
+        NKszMzP/MzMz3zIyMkkyMjIAMTExADIyMgAyMjIAMDAwADExMQAyMjIAMzMzADU1NQA0NDQANDQ0ADQ0
+        NAA0NDQANDQ0ADQ0NAQzMzO7MzMz/zMzM/8zMzP/NDQ0ezMzMwAzMzMAMzMzADMzMwD///8A////AP//
+        /wD///8AMzMz0DMzM/8zMzP/MzMz+DIyMnIxMTEAMjIyADIyMgAwMDAAMTExADIyMgAzMzMANDQ0ADEx
+        MQAwMDAAMDAwADAwMAAwMDAAMTExCjMzM+YzMzP/MzMz/zMzM/8xMTGqMTExADExMQAxMTEAMTExAP//
+        /wD///8A////AP///wAzMzPOMzMz/zIyMv8yMjL/MzMz/zMzM6QxMTETMjIyADAwMAAxMTEAMjIyADMz
+        MwA0NDQAMDAwAC4uLgAuLi4ALi4uAC4uLgAuLi4CMTExoDMzM/8zMzP/MzMz/zc3N2I4ODgANzc3ADg4
+        OAA4ODgA////AP///wD///8A////ADMzM88yMjL/Nzc3/zMzM/8wMDD/MzMz/zIyMskyMjIuMDAwADEx
+        MQAyMjIAMzMzADQ0NAAyMjIAMjIyADAwMAAwMDAAMDAwADAwMAAxMTEUMzMzlTIyMr40NDR0UFBQAlZW
+        VgBVVVUAV1dXAFhYWAD///8A////AP///wD///8AMzMz0jAwMP9LS0v/hoaG/z4+Pv8tLS3/MzMz/zMz
+        M+kyMjJaMTExADIyMgAzMzMANDQ0ADMzMwAzMzMAQkJCAElJSQBJSUkASUlJAEVFRQAzMzMAMTExEjY2
+        NgBUVFQAWVlZAFNTUwA+Pj4AIyMjAP///wD///8A////AP///wAzMzPULy8v/0pKSv+3t7f/oaGh/01N
+        Tf8rKyv/MjIy/zMzM/8yMjKCMjIyAzMzMwA0NDQAMzMzADMzMwBDQ0MASkpKAEpKSgBKSkoARkZGJTMz
+        M8EzMzPpNTU1nEdHRwpISEgARUVFAC0tLQAAAAAA////AP///wD///8A////ADMzM9YvLy//S0tL/7Cw
+        sP+7u7v/r6+v/2NjY/8tLS3/MDAw/zMzM/8yMjKxNDQ0HTQ0NAAzMzMAMzMzADMzMwAyMjIAMzMzADIy
+        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
+        M3czMzNMMjIyDzMzMwAzMzMAMzMzAP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A//////////////////////////////x/x//4f8P/+D/A//h/wH/8/8A/
+        ///AD/x/wAf4f8AD+D/AAfgPwAD4B8AA/AfAA/8DwAf/g8APx4PAH4ODwH/AA8D/wAfB/+APw//wH8//
+        /v////////////////////////////////8=
+</value>
+  </data>
+  <data name="labelKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelKey.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelNoXlateValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelNoXlateValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelNoXlateValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtKey.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtNoXlateValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNoXlateValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtNoXlateValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelDefaultValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelDefaultValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelDefaultValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtDefaultValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDefaultValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtDefaultValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tableLayoutPanel.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+</root>
