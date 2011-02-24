@@ -102,6 +102,7 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Translation\Translate.de.resx" />
     <EmbeddedResource Include="Translation\Translate.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Translate.Designer.cs</LastGenOutput>
