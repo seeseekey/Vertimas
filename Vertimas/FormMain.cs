@@ -20,7 +20,6 @@ namespace Vertimas
         private Dictionary<string, ResourceHolder> resources;
         private ResourceHolder currentResource;
 		private FilterMode filterMode=FilterMode.ShowAll;
-		private int visibleCount=0;
 
         public FormMain()
         {
@@ -244,6 +243,19 @@ namespace Vertimas
             }
         }
 
+		private void RefreshStatusbar()
+		{
+			//Count
+			int visibleCount=0;
+
+			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			{
+				if(gridResourcesStrings.Rows[rowCounter].Visible) visibleCount++;
+			}
+
+			tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
+		}
+
 		private void ApplyFilterCondition()
 		{
 			if(gridResourcesStrings==null)
@@ -376,7 +388,7 @@ namespace Vertimas
 
 			if(firstVisibleEntry==-1)
 			{
-				tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
+				RefreshStatusbar();
 				return;
 			}
 
@@ -384,11 +396,10 @@ namespace Vertimas
 			{
 				gridResourcesStrings.Rows[firstVisibleEntry].Visible=true;
 				gridResourcesStrings.CurrentCell=gridResourcesStrings.Rows[firstVisibleEntry].Cells[0];
-				visibleCount=0;
 			}
 			catch
 			{
-				tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
+				RefreshStatusbar();
 				return;
 			}
 
@@ -406,7 +417,6 @@ namespace Vertimas
 					case FilterMode.ShowAll:
 						{
 							gridResourcesStrings.Rows[rowCounter].Visible=true;
-							visibleCount++;
 							break;
 						}
 					case FilterMode.HideTranslated:
@@ -418,7 +428,6 @@ namespace Vertimas
 							else
 							{
 								gridResourcesStrings.Rows[rowCounter].Visible=true;
-								visibleCount++;
 							}
 
 							break;
@@ -428,7 +437,6 @@ namespace Vertimas
 							if(Translated)
 							{
 								gridResourcesStrings.Rows[rowCounter].Visible=true;
-								visibleCount++;
 							}
 							else
 							{
@@ -441,7 +449,7 @@ namespace Vertimas
 			}
 			#endregion
 
-			tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
+			RefreshStatusbar();
 		}
 
         /// <summary>
@@ -524,6 +532,7 @@ namespace Vertimas
 			{
 				DataGridViewRow dataRow=gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex]; //Determinate selected row
 				gridResourcesStrings.Rows.Remove(dataRow); //Remove row
+				RefreshStatusbar();
 			}
         }
 
