@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FolderDialogDescription" xml:space="preserve">
-    <value>Browse to the root of the project, typically where the sln file is</value>
+    <value>Browse to the folder of the project, typically where the sln file is:</value>
   </data>
   <data name="EntryCount" xml:space="preserve">
     <value>Entry count: {0} (Visible: {1})</value>

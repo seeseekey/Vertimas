@@ -158,7 +158,7 @@
     <value>256, 22</value>
   </data>
   <data name="hideNontranslatedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nicht Übersetzte Schlüssel verstecken</value>
+    <value>Nicht übersetzte Schlüssel verstecken</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 20</value>
@@ -183,5 +183,14 @@
   </data>
   <data name="keysToolStripMenuItem.Text" xml:space="preserve">
     <value>Schlüssel</value>
+  </data>
+  <data name="showAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alle Schlüssel</value>
+  </data>
+  <data name="tslEntryCount.Text" xml:space="preserve">
+    <value>Einträge: 0 (Sichtbar: 0)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>{Titel}	</value>
   </data>
 </root>

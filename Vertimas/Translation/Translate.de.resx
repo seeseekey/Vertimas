@@ -112,30 +112,30 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FolderDialogDescription" xml:space="preserve">
-    <value>Browse to the root of the project, typically where the sln file is</value>
+    <value>Gib den Projektordner an, typischweise der Ordner mit der sln Datei:</value>
   </data>
   <data name="EntryCount" xml:space="preserve">
-    <value>Entry count: {0} (Visible: {1})</value>
+    <value>Einträge: {0} (Sichtbar: {1})</value>
   </data>
   <data name="WouldYouSaveYourUnsavedFiles" xml:space="preserve">
-    <value>Would you save your unsaved files?</value>
+    <value>Wollen sie die ungespeicherten Dateien speichern?</value>
   </data>
   <data name="SaveFiles" xml:space="preserve">
-    <value>Save files?</value>
+    <value>Dateien speichern?</value>
   </data>
   <data name="AreYouSureYouWantToDeleteTheCurrentKey" xml:space="preserve">
-    <value>Are you sure you want to delete the current key?</value>
+    <value>Sind sie sicher, dass der aktuelle Schlüssel gelöscht werden soll?</value>
   </data>
   <data name="DeleteKey" xml:space="preserve">
-    <value>Delete Key</value>
+    <value>Schlüssel löschen</value>
   </data>
   <data name="ExceptionWhileSaving" xml:space="preserve">
-    <value>Exception while saving: </value>
+    <value>Fehler beim Speichern: </value>
   </data>
 </root>

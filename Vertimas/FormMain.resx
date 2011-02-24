@@ -176,13 +176,13 @@
     <value>View</value>
   </data>
   <data name="addNewKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>150, 22</value>
   </data>
   <data name="addNewKeyToolStripMenuItem.Text" xml:space="preserve">
     <value>Add New Key...</value>
   </data>
   <data name="deleteKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>150, 22</value>
   </data>
   <data name="deleteKeyToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete Key...</value>

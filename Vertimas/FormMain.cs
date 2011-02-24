@@ -387,9 +387,17 @@ namespace Vertimas
 				return;
 			}
 
-			gridResourcesStrings.Rows[firstVisibleEntry].Visible=true;
-			gridResourcesStrings.CurrentCell=gridResourcesStrings.Rows[firstVisibleEntry].Cells[0];
-			visibleCount=0;
+			try
+			{
+				gridResourcesStrings.Rows[firstVisibleEntry].Visible=true;
+				gridResourcesStrings.CurrentCell=gridResourcesStrings.Rows[firstVisibleEntry].Cells[0];
+				visibleCount=0;
+			}
+			catch
+			{
+				tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
+				return;
+			}
 
 			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
 			{
