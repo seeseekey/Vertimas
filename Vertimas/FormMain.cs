@@ -12,13 +12,6 @@ using System.Reflection;
 using Vertimas.Translation;
 using Vertimas.Enums;
 
-//TODO Pfade merken
-//TODO Iconleiste
-//TODO About Dialog
-//TODO Google Translate Integration
-//TODO Ladefortschritt
-//TODO Key Spalte schreibgeschützt falls die Probleme mit dem Umbennen bleiben
-//TODO Sprachen als ICON
 namespace Vertimas
 {
     public partial class FormMain : Form
