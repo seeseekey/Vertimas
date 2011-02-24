@@ -508,8 +508,7 @@ namespace Vertimas
 
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
-                    // Add key
-                    currentResource.AddString(form.Key, form.NeutralValue, form.DefaultValue);
+                    currentResource.AddString(form.Key, form.NeutralValue, form.DefaultValue); //Add key
                 }
             }
         }
@@ -523,8 +522,8 @@ namespace Vertimas
 
 			if(MessageBox.Show(Translate.AreYouSureYouWantToDeleteTheCurrentKey, Translate.DeleteKey, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)==DialogResult.Yes)
 			{
-				DataGridViewRow dataRow=gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex]; //Selektierte Row ermitteln
-				gridResourcesStrings.Rows.Remove(dataRow); //Row löschen
+				DataGridViewRow dataRow=gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex]; //Determinate selected row
+				gridResourcesStrings.Rows.Remove(dataRow); //Remove row
 			}
         }
 
@@ -558,8 +557,7 @@ namespace Vertimas
 
 			if(!(selectedTreeNode.Tag is ResourceHolder))
 			{
-				// Shouldn't happen
-				return;
+				return; // Shouldn't happen
 			}
 
             ResourceHolder resource = selectedTreeNode.Tag as ResourceHolder;
