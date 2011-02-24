@@ -7,14 +7,20 @@ using System.Drawing;
 using System.IO;
 using System.Xml;
 using System.Windows.Forms;
+using Vertimas.Classes;
+using System.Reflection;
+using Vertimas.Translation;
+using Vertimas.Enums;
 
 //TODO Pfade merken
 //TODO Filtwer Funktionen
-//TODO Icon
-//TODO Fehlererkennung wieder aktivieren
+//TODO Statusleiste
+//TODO Iconleiste
 //TODO About Dialog
 //TODO Löschen von Keys funktioniert nicht
-//Google Translate Integration
+//TODO Google Translate Integration
+//TODO Ladefortschritt
+//TODO Key Spalte schreibgeschützt falls die Probleme mit dem Umbennen bleiben
 namespace Vertimas
 {
     public partial class FormMain : Form
@@ -22,6 +28,7 @@ namespace Vertimas
         private string rootPath;
         private Dictionary<string, ResourceHolder> resources;
         private ResourceHolder currentResource;
+		private FilterMode filterMode=FilterMode.ShowAll;
 
         public FormMain()
         {
@@ -46,7 +53,7 @@ namespace Vertimas
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
 
             folderDialog.SelectedPath = rootPath;
-            folderDialog.Description = "Browse to the root of the project, typically where the sln file is";
+            folderDialog.Description = Translate.FolderDialogDescription;
 
 			if(folderDialog.ShowDialog()==DialogResult.OK)
 			{
@@ -201,19 +208,11 @@ namespace Vertimas
 
 			gridResourcesStrings.DataSource=resource.StringsTable;
 
+			gridResourcesStrings.Columns["Comment"].Visible=false;
 			gridResourcesStrings.Columns["Translated"].Visible=false;
 			gridResourcesStrings.Columns["Error"].Visible=false;
 
-			//Janus.Windows.GridEX.GridEXFormatCondition formatCondition =
-			//    new Janus.Windows.GridEX.GridEXFormatCondition(
-			//        gridEXStrings.RootTable.Columns["Error"], Janus.Windows.GridEX.ConditionOperator.Equal, true);
-			//gridEXStrings.RootTable.FormatConditions.Add(formatCondition);
-			//formatCondition.FormatStyle.ForeColor = Color.Red;
-
             ApplyFilterCondition();
-
-			//gridEXStrings.Columns["Key"].EditType = Janus.Windows.GridEX.EditType.NoEdit;
-			//gridEXStrings.SortKeys.Add(gridEXStrings.RootTable.Columns["Key"]);
         }
 
         private void checkedListBoxLanguages_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -255,32 +254,187 @@ namespace Vertimas
             }
         }
 
-        private void ApplyFilterCondition()
-        {
+		private void ApplyFilterCondition()
+		{
 			if(gridResourcesStrings==null)
 			{
 				return;
 			}
 
-			//Non Translated Hide
-			//if(hideNontranslatedToolStripMenuItem.Checked)
-			//{
-			//    Janus.Windows.GridEX.GridEXFilterCondition filter=
-			//        new Janus.Windows.GridEX.GridEXFilterCondition(
-			//            gridEXStrings.RootTable.Columns["Translated"],
-			//            Janus.Windows.GridEX.ConditionOperator.Equal, true);
-			//    gridEXStrings.RootTable.FilterCondition=filter;
-			//}
-			//else
-			//    gridEXStrings.RootTable.RemoveFilter();
-        }
+			#region Farben
+			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			{
+				//Farbe
+				bool cellValue=false;
 
-        private void hideNontranslatedToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            hideNontranslatedToolStripMenuItem.Checked = !hideNontranslatedToolStripMenuItem.Checked;
+				if(gridResourcesStrings.Rows[rowCounter].Cells["Error"].Value!=null)
+				{
+					cellValue=(bool)gridResourcesStrings.Rows[rowCounter].Cells["Error"].Value;
+				}
 
-            ApplyFilterCondition();
-        }
+				if(cellValue==true)
+				{
+					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
+					tmpStyle.BackColor=Color.Red;
+					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+				}
+				else
+				{
+					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
+					tmpStyle.BackColor=Color.White;
+					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+				}
+
+				//Translated
+				bool translated=true;
+
+				for(int i=0; i<gridResourcesStrings.Rows[rowCounter].Cells.Count; i++)
+				{
+					DataGridViewCell cell=gridResourcesStrings.Rows[rowCounter].Cells[i];
+
+					if(gridResourcesStrings.Columns[i].HeaderText=="Translated") continue;
+					if(gridResourcesStrings.Columns[i].HeaderText=="Error") continue;
+					if(gridResourcesStrings.Columns[i].HeaderText=="Comment") continue;
+
+					if(cell.ValueType==typeof(string))
+					{
+						if(cell.Value is DBNull)
+						{
+							translated=false;
+							break;
+						}
+
+						string val=(string)cell.Value;
+
+						if(val=="")
+						{
+							translated=false;
+							break;
+						}
+					}
+				}
+
+				if(translated)
+				{
+					gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value=true;
+
+					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
+					tmpStyle.BackColor=Color.White;
+					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+				}
+				else
+				{
+					gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value=false;
+
+					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
+					tmpStyle.BackColor=Color.Yellow;
+					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+				}
+			}
+
+			
+			#endregion
+
+			#region Filter
+			//Ersten Sichtbaren Entry suchen
+			int firstVisibleEntry=-1;
+
+			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			{
+				bool Translated=false;
+
+				if(gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value!=null)
+				{
+					Translated=(bool)gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value;
+				}
+
+				bool found=false;
+
+				switch(filterMode)
+				{
+					case FilterMode.ShowAll:
+						{
+							firstVisibleEntry=rowCounter;
+							found=true;
+							break;
+						}
+					case FilterMode.HideTranslated:
+						{
+							if(Translated==false)
+							{
+								firstVisibleEntry=rowCounter;
+								found=true;
+							}
+
+							break;
+						}
+					case FilterMode.HideNonTranslated:
+						{
+							if(Translated==true)
+							{
+								firstVisibleEntry=rowCounter;
+								found=true;
+								break;
+							}
+
+							break;
+						}
+				}
+
+				if(found) break;
+			}
+
+			gridResourcesStrings.Rows[firstVisibleEntry].Visible=true;
+			gridResourcesStrings.CurrentCell=gridResourcesStrings.Rows[firstVisibleEntry].Cells[0];
+
+			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			{
+				bool Translated=false;
+
+				if(gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value!=null)
+				{
+					Translated=(bool)gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value;
+				}
+
+				switch(filterMode)
+				{
+					case FilterMode.ShowAll:
+						{
+							gridResourcesStrings.Rows[rowCounter].Visible=true;
+							break;
+						}
+					case FilterMode.HideTranslated:
+						{
+							if(Translated)
+							{
+								gridResourcesStrings.Rows[rowCounter].Visible=false;
+							}
+							else
+							{
+								gridResourcesStrings.Rows[rowCounter].Visible=true;
+							}
+
+							break;
+						}
+					case FilterMode.HideNonTranslated:
+						{
+							if(Translated)
+							{
+								gridResourcesStrings.Rows[rowCounter].Visible=true;
+							}
+							else
+							{
+								gridResourcesStrings.Rows[rowCounter].Visible=false;
+							}
+
+							break;
+						}
+				}
+			}
+			#endregion
+
+			tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count);
+		}
 
         /// <summary>
         /// Check and prompt for save
@@ -300,7 +454,7 @@ namespace Vertimas
 
             if (isDirty)
             {
-				if(MessageBox.Show("Are you sure you want to lose all your changes without saving?", "Lose changes?", MessageBoxButtons.YesNoCancel)==DialogResult.Yes)
+				if(MessageBox.Show(Translate.WouldYouSaveYourUnsavedFiles, Translate.SaveFiles, MessageBoxButtons.YesNoCancel)==DialogResult.No)
 				{
 					return true;
 				}
@@ -311,27 +465,12 @@ namespace Vertimas
             return true;
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
 			if(!CanClose())
 			{
 				e.Cancel=true;
 			}
-        }
-
-        private void gridEXStrings_DoubleClick(object sender, EventArgs e)
-        {
-			if(gridResourcesStrings.RowCount==0)
-			{
-				return;
-			}
-
-			ZoomWindow frm=new ZoomWindow();
-			object value=Convert.ToString(gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex].Cells[gridResourcesStrings.SelectedCells[0].ColumnIndex].Value);
-			frm.textBoxString.Text=(string)value;
-			frm.ShowDialog();
-
-			gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex].Cells[gridResourcesStrings.SelectedCells[0].ColumnIndex].Value=frm.textBoxString.Text;
         }
 
         private void addNewKeyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -341,7 +480,7 @@ namespace Vertimas
 				return;
 			}
 
-            using (AddKey form = new AddKey(currentResource))
+            using (FormAddKey form = new FormAddKey(currentResource))
             {
                 DialogResult result = form.ShowDialog();
 
@@ -360,7 +499,7 @@ namespace Vertimas
 				return;
 			}
 
-			if(MessageBox.Show("Are you sure you want to delete the current key?", "Delete", MessageBoxButtons.YesNoCancel)==DialogResult.Yes)
+			if(MessageBox.Show(Translate.AreYouSureYouWantToDeleteTheCurrentKey, Translate.DeleteKey, MessageBoxButtons.YesNoCancel)==DialogResult.Yes)
 			{
 				DataGridViewRow dataRow=gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex]; //Selektierte Row ermitteln
 				gridResourcesStrings.Rows.Remove(dataRow); //Row löschen
@@ -411,6 +550,69 @@ namespace Vertimas
         private void treeViewResx_AfterSelect(object sender, TreeViewEventArgs e)
         {
             SelectResource();
-        }
+		}
+
+		private void gridResourcesStrings_DataSourceChanged(object sender, EventArgs e)
+		{
+			ApplyFilterCondition();
+		}
+
+		private void gridResourcesStrings_CellLeave(object sender, DataGridViewCellEventArgs e)
+		{
+			ApplyFilterCondition();
+		}
+
+		private void FormMain_Load(object sender, EventArgs e)
+		{
+			//Versionsnummer in Titelleiste schreiben
+			Assembly InstAssembly=Assembly.GetExecutingAssembly();
+			Text+=" " + InstAssembly.GetName().Version.ToString();
+		}
+
+		private void menuStrip_MenuActivate(object sender, EventArgs e)
+		{
+			switch(filterMode)
+			{
+				case FilterMode.ShowAll:
+					{
+						showAllToolStripMenuItem.Checked=true;
+						hideTranslatedToolStripMenuItem.Checked=false;
+						hideNontranslatedToolStripMenuItem.Checked=false;
+						break;
+					}
+				case FilterMode.HideTranslated:
+					{
+						showAllToolStripMenuItem.Checked=false;
+						hideTranslatedToolStripMenuItem.Checked=true;
+						hideNontranslatedToolStripMenuItem.Checked=false;
+						break;
+					}
+				case FilterMode.HideNonTranslated:
+					{
+						showAllToolStripMenuItem.Checked=false;
+						hideTranslatedToolStripMenuItem.Checked=false;
+						hideNontranslatedToolStripMenuItem.Checked=true;
+						break;
+					}
+			}
+		}
+
+		private void showAllToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			filterMode=FilterMode.ShowAll;
+			ApplyFilterCondition();
+		}
+
+		private void hideTranslatedToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			filterMode=FilterMode.HideTranslated;
+			ApplyFilterCondition();
+		}
+
+		private void hideNontranslatedToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			filterMode=FilterMode.HideNonTranslated;
+			ApplyFilterCondition();
+		}
     }
 }

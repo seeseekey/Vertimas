@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Vertimas</RootNamespace>
-    <AssemblyName>ResxTranslator</AssemblyName>
+    <AssemblyName>Vertimas</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -54,6 +54,10 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -63,25 +67,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddKey.cs">
+    <Compile Include="Enums\FilterMode.cs" />
+    <Compile Include="FormAddKey.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddKey.Designer.cs">
-      <DependentUpon>AddKey.cs</DependentUpon>
+    <Compile Include="FormAddKey.Designer.cs">
+      <DependentUpon>FormAddKey.cs</DependentUpon>
     </Compile>
-    <Compile Include="Common.cs" />
+    <Compile Include="Classes\Common.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="LanguageHolder.cs" />
-    <Compile Include="PathHolder.cs" />
+    <Compile Include="Classes\LanguageHolder.cs" />
+    <Compile Include="Classes\PathHolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddKey.resx">
-      <DependentUpon>AddKey.cs</DependentUpon>
+    <Compile Include="Translation\Translate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Translate.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAddKey.resx">
+      <DependentUpon>FormAddKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.de.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -89,17 +99,12 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ZoomWindow.resx">
-      <DependentUpon>ZoomWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Translation\Translate.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Translate.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <Compile Include="ResourceHolder.cs" />
-    <Compile Include="ZoomWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ZoomWindow.Designer.cs">
-      <DependentUpon>ZoomWindow.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Classes\ResourceHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -117,6 +122,10 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
