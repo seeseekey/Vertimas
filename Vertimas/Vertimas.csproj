@@ -139,6 +139,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <Compile Include="Classes\ResourceHolder.cs" />
+    <EmbeddedResource Include="Templates\blank-resx.dat" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -750,32 +750,14 @@ namespace Vertimas
 			InstFormAbout.ShowDialog();
 		}
 
-		private void CleanFile(string filename)
+		static void CreateNewResourcesFile(string file)
 		{
-			XmlDocument xmlDoc=new XmlDocument();
-			xmlDoc.Load(filename);
-
-			HashSet<string> usedKeys=new HashSet<string>();
-			List<XmlNode> nodesToBeDeleted=new List<XmlNode>();
-
-			foreach(XmlNode dataNode in xmlDoc.SelectNodes("/root/data"))
+			using(Stream s=typeof(FormMain).Assembly.GetManifestResourceStream("Vertimas.Templates.blank-resx.dat"))
 			{
-				if(dataNode.Attributes["type"]!=null)
-				{
-					// Only support strings
-					continue;
-				}
-
-				if(dataNode.Attributes["name"]==null)
-				{
-					// Missing name
-					continue;
-				}
-
-				dataNode.Attributes["name"].Value="";
+				byte[] buffer=new byte[s.Length];
+				s.Read(buffer, 0, (int)s.Length);
+				File.WriteAllBytes(file, buffer);
 			}
-
-			xmlDoc.Save(filename);
 		}
 
 		private TreeNode GetTreenodeWithFullPath(TreeNode treeNode, string fullPath)
@@ -819,10 +801,10 @@ namespace Vertimas
 				closeToolStripMenuItem_Click(null, null);
 
 				//CopyFile
-				FileSystem.CopyFile(resName, resNameNewLanguage);
+				//FileSystem.CopyFile(resName, resNameNewLanguage);
 
 				//Clean file
-				CleanFile(resNameNewLanguage);
+				CreateNewResourcesFile(resNameNewLanguage);
 
 				//Reopen project
 				OpenFolder(rootPath);
