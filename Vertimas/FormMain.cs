@@ -11,6 +11,7 @@ using Vertimas.Classes;
 using System.Reflection;
 using Vertimas.Translation;
 using Vertimas.Enums;
+using CSCL;
 
 namespace Vertimas
 {
@@ -20,6 +21,7 @@ namespace Vertimas
         private Dictionary<string, ResourceHolder> resources;
         private ResourceHolder currentResource;
 		private FilterMode filterMode=FilterMode.ShowAll;
+		private List<string> recentProjects;
 
         public FormMain()
         {
@@ -36,31 +38,44 @@ namespace Vertimas
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+
+			folderDialog.SelectedPath=Common.Options.GetElementAsString("xml.Options.Paths.LastOpenedPath");
+            folderDialog.Description = Translate.FolderDialogDescription;
+
+			if(folderDialog.ShowDialog()==DialogResult.OK)
+			{
+				OpenFolder(folderDialog.SelectedPath);
+			}
+        }
+
+		private void OpenFolder(string folder)
+		{
 			if(!CanClose())
 			{
 				return;
 			}
 
-            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+			Common.Options.WriteElement("xml.Options.Paths.LastOpenedPath", folder);
 
-            folderDialog.SelectedPath = rootPath;
-            folderDialog.Description = Translate.FolderDialogDescription;
-
-			if(folderDialog.ShowDialog()==DialogResult.OK)
+			if(recentProjects.Contains(folder))
 			{
-				rootPath=folderDialog.SelectedPath;
-
-				FindResx(rootPath);
-
-				treeViewResx.Nodes.Clear();
-				foreach(ResourceHolder resource in resources.Values)
-				{
-					BuildTreeView(resource);
-				}
-
-				treeViewResx.ExpandAll();
+				recentProjects.Remove(folder);
 			}
-        }
+
+			recentProjects.Insert(0, folder);
+			rootPath=folder;
+
+			FindResxFiles(rootPath);
+
+			treeViewResx.Nodes.Clear();
+			foreach(ResourceHolder resource in resources.Values)
+			{
+				BuildTreeView(resource);
+			}
+
+			treeViewResx.ExpandAll();
+		}
 
 		private void BuildTreeView(ResourceHolder resource)
 		{
@@ -99,7 +114,7 @@ namespace Vertimas
 			parentNode.Nodes.Add(leafNode);
 		}
 
-        private void FindResx(string folder)
+        private void FindResxFiles(string folder)
         {
             string displayFolder = "";
 
@@ -176,7 +191,7 @@ namespace Vertimas
             string[] subfolders = Directory.GetDirectories(folder);
             foreach (string subfolder in subfolders)
             {
-                FindResx(subfolder);
+                FindResxFiles(subfolder);
             }
         }
 
@@ -195,11 +210,11 @@ namespace Vertimas
                 checkedListBoxLanguages.Items.Add(languageHolder, true);
             }
 
-			gridResourcesStrings.DataSource=resource.StringsTable;
+			dgwResourceData.DataSource=resource.StringsTable;
 
-			gridResourcesStrings.Columns["Comment"].Visible=false;
-			gridResourcesStrings.Columns["Translated"].Visible=false;
-			gridResourcesStrings.Columns["Error"].Visible=false;
+			dgwResourceData.Columns["Comment"].Visible=false;
+			dgwResourceData.Columns["Translated"].Visible=false;
+			dgwResourceData.Columns["Error"].Visible=false;
 
             ApplyFilterCondition();
         }
@@ -210,15 +225,15 @@ namespace Vertimas
             if (languageHolder == null)
                 return;
 
-			if(gridResourcesStrings==null)
+			if(dgwResourceData==null)
 			{
 				// Not populated yet
 				return;
 			}
 
-			if(gridResourcesStrings.Columns.Contains(languageHolder.Id))
+			if(dgwResourceData.Columns.Contains(languageHolder.Id))
 			{
-				gridResourcesStrings.Columns[languageHolder.Id].Visible=e.NewValue==CheckState.Checked;
+				dgwResourceData.Columns[languageHolder.Id].Visible=e.NewValue==CheckState.Checked;
 			}
         }
 
@@ -248,55 +263,55 @@ namespace Vertimas
 			//Count
 			int visibleCount=0;
 
-			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			for(int rowCounter=0; rowCounter<dgwResourceData.Rows.Count; rowCounter++)
 			{
-				if(gridResourcesStrings.Rows[rowCounter].Visible) visibleCount++;
+				if(dgwResourceData.Rows[rowCounter].Visible) visibleCount++;
 			}
 
-			tslEntryCount.Text=String.Format(Translate.EntryCount, gridResourcesStrings.Rows.Count, visibleCount);
+			tslEntryCount.Text=String.Format(Translate.EntryCount, dgwResourceData.Rows.Count, visibleCount);
 		}
 
 		private void ApplyFilterCondition()
 		{
-			if(gridResourcesStrings==null)
+			if(dgwResourceData==null)
 			{
 				return;
 			}
 
 			#region Farben
-			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			for(int rowCounter=0; rowCounter<dgwResourceData.Rows.Count; rowCounter++)
 			{
 				//Farbe
 				bool cellValue=false;
 
-				if(gridResourcesStrings.Rows[rowCounter].Cells["Error"].Value!=null)
+				if(dgwResourceData.Rows[rowCounter].Cells["Error"].Value!=null)
 				{
-					cellValue=(bool)gridResourcesStrings.Rows[rowCounter].Cells["Error"].Value;
+					cellValue=(bool)dgwResourceData.Rows[rowCounter].Cells["Error"].Value;
 				}
 
 				if(cellValue==true)
 				{
 					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
 					tmpStyle.BackColor=Color.Red;
-					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+					dgwResourceData.Rows[rowCounter].DefaultCellStyle=tmpStyle;
 				}
 				else
 				{
 					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
 					tmpStyle.BackColor=Color.White;
-					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+					dgwResourceData.Rows[rowCounter].DefaultCellStyle=tmpStyle;
 				}
 
 				//Translated
 				bool translated=true;
 
-				for(int i=0; i<gridResourcesStrings.Rows[rowCounter].Cells.Count; i++)
+				for(int i=0; i<dgwResourceData.Rows[rowCounter].Cells.Count; i++)
 				{
-					DataGridViewCell cell=gridResourcesStrings.Rows[rowCounter].Cells[i];
+					DataGridViewCell cell=dgwResourceData.Rows[rowCounter].Cells[i];
 
-					if(gridResourcesStrings.Columns[i].HeaderText=="Translated") continue;
-					if(gridResourcesStrings.Columns[i].HeaderText=="Error") continue;
-					if(gridResourcesStrings.Columns[i].HeaderText=="Comment") continue;
+					if(dgwResourceData.Columns[i].HeaderText=="Translated") continue;
+					if(dgwResourceData.Columns[i].HeaderText=="Error") continue;
+					if(dgwResourceData.Columns[i].HeaderText=="Comment") continue;
 
 					if(cell.ValueType==typeof(string))
 					{
@@ -318,19 +333,19 @@ namespace Vertimas
 
 				if(translated)
 				{
-					gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value=true;
+					dgwResourceData.Rows[rowCounter].Cells["Translated"].Value=true;
 
 					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
 					tmpStyle.BackColor=Color.White;
-					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+					dgwResourceData.Rows[rowCounter].DefaultCellStyle=tmpStyle;
 				}
 				else
 				{
-					gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value=false;
+					dgwResourceData.Rows[rowCounter].Cells["Translated"].Value=false;
 
 					DataGridViewCellStyle tmpStyle=new DataGridViewCellStyle();
 					tmpStyle.BackColor=Color.Yellow;
-					gridResourcesStrings.Rows[rowCounter].DefaultCellStyle=tmpStyle;
+					dgwResourceData.Rows[rowCounter].DefaultCellStyle=tmpStyle;
 				}
 			}
 
@@ -341,13 +356,13 @@ namespace Vertimas
 			//Ersten Sichtbaren Entry suchen
 			int firstVisibleEntry=-1;
 
-			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			for(int rowCounter=0; rowCounter<dgwResourceData.Rows.Count; rowCounter++)
 			{
 				bool Translated=false;
 
-				if(gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value!=null)
+				if(dgwResourceData.Rows[rowCounter].Cells["Translated"].Value!=null)
 				{
-					Translated=(bool)gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value;
+					Translated=(bool)dgwResourceData.Rows[rowCounter].Cells["Translated"].Value;
 				}
 
 				bool found=false;
@@ -394,8 +409,8 @@ namespace Vertimas
 
 			try
 			{
-				gridResourcesStrings.Rows[firstVisibleEntry].Visible=true;
-				gridResourcesStrings.CurrentCell=gridResourcesStrings.Rows[firstVisibleEntry].Cells[0];
+				dgwResourceData.Rows[firstVisibleEntry].Visible=true;
+				dgwResourceData.CurrentCell=dgwResourceData.Rows[firstVisibleEntry].Cells[0];
 			}
 			catch
 			{
@@ -403,31 +418,31 @@ namespace Vertimas
 				return;
 			}
 
-			for(int rowCounter=0; rowCounter<gridResourcesStrings.Rows.Count; rowCounter++)
+			for(int rowCounter=0; rowCounter<dgwResourceData.Rows.Count; rowCounter++)
 			{
 				bool Translated=false;
 
-				if(gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value!=null)
+				if(dgwResourceData.Rows[rowCounter].Cells["Translated"].Value!=null)
 				{
-					Translated=(bool)gridResourcesStrings.Rows[rowCounter].Cells["Translated"].Value;
+					Translated=(bool)dgwResourceData.Rows[rowCounter].Cells["Translated"].Value;
 				}
 
 				switch(filterMode)
 				{
 					case FilterMode.ShowAll:
 						{
-							gridResourcesStrings.Rows[rowCounter].Visible=true;
+							dgwResourceData.Rows[rowCounter].Visible=true;
 							break;
 						}
 					case FilterMode.HideTranslated:
 						{
 							if(Translated)
 							{
-								gridResourcesStrings.Rows[rowCounter].Visible=false;
+								dgwResourceData.Rows[rowCounter].Visible=false;
 							}
 							else
 							{
-								gridResourcesStrings.Rows[rowCounter].Visible=true;
+								dgwResourceData.Rows[rowCounter].Visible=true;
 							}
 
 							break;
@@ -436,11 +451,11 @@ namespace Vertimas
 						{
 							if(Translated)
 							{
-								gridResourcesStrings.Rows[rowCounter].Visible=true;
+								dgwResourceData.Rows[rowCounter].Visible=true;
 							}
 							else
 							{
-								gridResourcesStrings.Rows[rowCounter].Visible=false;
+								dgwResourceData.Rows[rowCounter].Visible=false;
 							}
 
 							break;
@@ -497,6 +512,23 @@ namespace Vertimas
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+			//Recent projects
+			string recentProjectsJoined="";
+			int count=0;
+
+			foreach(string i in recentProjects)
+			{
+				recentProjectsJoined+=i+"|";
+				count++;
+				if(count==5) break;
+			}
+
+			Common.Options.WriteElement("xml.Options.Paths.RecentProjects", recentProjectsJoined);
+
+			//Save options
+			Common.Options.Save();
+
+			//Check non saved data
 			if(!CanClose())
 			{
 				e.Cancel=true;
@@ -523,15 +555,15 @@ namespace Vertimas
 
         private void deleteKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-			if(currentResource==null||gridResourcesStrings.RowCount==0)
+			if(currentResource==null||dgwResourceData.RowCount==0)
 			{
 				return;
 			}
 
 			if(MessageBox.Show(Translate.AreYouSureYouWantToDeleteTheCurrentKey, Translate.DeleteKey, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)==DialogResult.Yes)
 			{
-				DataGridViewRow dataRow=gridResourcesStrings.Rows[gridResourcesStrings.SelectedCells[0].RowIndex]; //Determinate selected row
-				gridResourcesStrings.Rows.Remove(dataRow); //Remove row
+				DataGridViewRow dataRow=dgwResourceData.Rows[dgwResourceData.SelectedCells[0].RowIndex]; //Determinate selected row
+				dgwResourceData.Rows.Remove(dataRow); //Remove row
 				RefreshStatusbar();
 			}
         }
@@ -546,9 +578,9 @@ namespace Vertimas
             treeViewResx.Nodes.Clear();
             checkedListBoxLanguages.Items.Clear();
 
-			gridResourcesStrings.DataSource=null;
-			gridResourcesStrings.Columns.Clear();
-			gridResourcesStrings.Rows.Clear();
+			dgwResourceData.DataSource=null;
+			dgwResourceData.Columns.Clear();
+			dgwResourceData.Rows.Clear();
 
             labelTitle.Visible = false;
 
@@ -593,13 +625,53 @@ namespace Vertimas
 
 		private void FormMain_Load(object sender, EventArgs e)
 		{
-			//Versionsnummer in Titelleiste schreiben
+			//Write version number in title
 			Assembly InstAssembly=Assembly.GetExecutingAssembly();
 			Text+=" " + InstAssembly.GetName().Version.ToString();
+
+			//Init
+			recentProjects=new List<string>();
+
+			//Create options folder if not exists
+			if(FileSystem.ExistsDirectory(Common.OptionsDirectory)==false)
+			{
+				FileSystem.CreateDirectory(Common.OptionsDirectory, true);
+			}
+
+			//Options
+			bool ExitsConfig=FileSystem.ExistsFile(Common.OptionsXmlFilename);
+
+			Common.Options=new XmlData(Common.OptionsXmlFilename);
+			if(!ExitsConfig) Common.Options.AddRoot("xml");
+
+			//Load options
+			string recentsProjectsJoined=Common.Options.GetElementAsString("xml.Options.Paths.RecentProjects");
+			string[] splited=recentsProjectsJoined.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+
+			foreach(string entry in splited)
+			{
+				recentProjects.Add(entry);
+			}
+		}
+
+		private void recentProjectsOpen_Click(object sender, EventArgs e)
+		{
+			ToolStripMenuItem item=(ToolStripMenuItem)sender;
+			OpenFolder(item.Text);
 		}
 
 		private void menuStrip_MenuActivate(object sender, EventArgs e)
 		{
+			//File
+			recentProjectsToolStripMenuItem.DropDownItems.Clear();
+
+			foreach(string i in recentProjects)
+			{
+				ToolStripItem item=recentProjectsToolStripMenuItem.DropDownItems.Add(i);
+				item.Click+=recentProjectsOpen_Click;
+			}
+
+			//View
 			switch(filterMode)
 			{
 				case FilterMode.ShowAll:

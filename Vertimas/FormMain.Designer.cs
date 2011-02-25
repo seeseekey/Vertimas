@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components=new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources=new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.menuStrip=new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +53,14 @@
 			this.treeViewResx=new System.Windows.Forms.TreeView();
 			this.splitContainerResource=new System.Windows.Forms.SplitContainer();
 			this.checkedListBoxLanguages=new System.Windows.Forms.CheckedListBox();
-			this.gridResourcesStrings=new System.Windows.Forms.DataGridView();
+			this.dgwResourceData=new System.Windows.Forms.DataGridView();
 			this.panelTitle=new System.Windows.Forms.Panel();
 			this.labelTitle=new System.Windows.Forms.Label();
+			this.cmsDataGridView=new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.addNewKeyToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+			this.deleteKeyToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+			this.recentProjectsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem1=new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
@@ -63,8 +69,9 @@
 			this.splitContainerResource.Panel1.SuspendLayout();
 			this.splitContainerResource.Panel2.SuspendLayout();
 			this.splitContainerResource.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gridResourcesStrings)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwResourceData)).BeginInit();
 			this.panelTitle.SuspendLayout();
+			this.cmsDataGridView.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -85,6 +92,8 @@
             this.toolStripMenuItem2,
             this.saveToolStripMenuItem,
             this.toolStripMenuItem3,
+            this.recentProjectsToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name="fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -225,7 +234,7 @@
 			// 
 			// splitContainerResource.Panel2
 			// 
-			this.splitContainerResource.Panel2.Controls.Add(this.gridResourcesStrings);
+			this.splitContainerResource.Panel2.Controls.Add(this.dgwResourceData);
 			this.splitContainerResource.Panel2.Controls.Add(this.panelTitle);
 			// 
 			// checkedListBoxLanguages
@@ -237,18 +246,19 @@
 			this.checkedListBoxLanguages.Name="checkedListBoxLanguages";
 			this.checkedListBoxLanguages.ItemCheck+=new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxLanguages_ItemCheck);
 			// 
-			// gridResourcesStrings
+			// dgwResourceData
 			// 
-			this.gridResourcesStrings.AllowUserToAddRows=false;
-			this.gridResourcesStrings.AllowUserToDeleteRows=false;
-			this.gridResourcesStrings.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.gridResourcesStrings.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			resources.ApplyResources(this.gridResourcesStrings, "gridResourcesStrings");
-			this.gridResourcesStrings.MultiSelect=false;
-			this.gridResourcesStrings.Name="gridResourcesStrings";
-			this.gridResourcesStrings.SelectionMode=System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridResourcesStrings.DataSourceChanged+=new System.EventHandler(this.gridResourcesStrings_DataSourceChanged);
-			this.gridResourcesStrings.CellEndEdit+=new System.Windows.Forms.DataGridViewCellEventHandler(this.gridResourcesStrings_CellLeave);
+			this.dgwResourceData.AllowUserToAddRows=false;
+			this.dgwResourceData.AllowUserToDeleteRows=false;
+			this.dgwResourceData.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgwResourceData.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwResourceData.ContextMenuStrip=this.cmsDataGridView;
+			resources.ApplyResources(this.dgwResourceData, "dgwResourceData");
+			this.dgwResourceData.MultiSelect=false;
+			this.dgwResourceData.Name="dgwResourceData";
+			this.dgwResourceData.SelectionMode=System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgwResourceData.DataSourceChanged+=new System.EventHandler(this.gridResourcesStrings_DataSourceChanged);
+			this.dgwResourceData.CellEndEdit+=new System.Windows.Forms.DataGridViewCellEventHandler(this.gridResourcesStrings_CellLeave);
 			// 
 			// panelTitle
 			// 
@@ -260,6 +270,36 @@
 			// 
 			resources.ApplyResources(this.labelTitle, "labelTitle");
 			this.labelTitle.Name="labelTitle";
+			// 
+			// cmsDataGridView
+			// 
+			this.cmsDataGridView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewKeyToolStripMenuItem1,
+            this.deleteKeyToolStripMenuItem1});
+			this.cmsDataGridView.Name="cmsDataGridView";
+			resources.ApplyResources(this.cmsDataGridView, "cmsDataGridView");
+			// 
+			// addNewKeyToolStripMenuItem1
+			// 
+			this.addNewKeyToolStripMenuItem1.Name="addNewKeyToolStripMenuItem1";
+			resources.ApplyResources(this.addNewKeyToolStripMenuItem1, "addNewKeyToolStripMenuItem1");
+			this.addNewKeyToolStripMenuItem1.Click+=new System.EventHandler(this.addNewKeyToolStripMenuItem_Click);
+			// 
+			// deleteKeyToolStripMenuItem1
+			// 
+			this.deleteKeyToolStripMenuItem1.Name="deleteKeyToolStripMenuItem1";
+			resources.ApplyResources(this.deleteKeyToolStripMenuItem1, "deleteKeyToolStripMenuItem1");
+			this.deleteKeyToolStripMenuItem1.Click+=new System.EventHandler(this.deleteKeyToolStripMenuItem_Click);
+			// 
+			// recentProjectsToolStripMenuItem
+			// 
+			this.recentProjectsToolStripMenuItem.Name="recentProjectsToolStripMenuItem";
+			resources.ApplyResources(this.recentProjectsToolStripMenuItem, "recentProjectsToolStripMenuItem");
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name="toolStripMenuItem1";
+			resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
 			// 
 			// FormMain
 			// 
@@ -284,8 +324,9 @@
 			this.splitContainerResource.Panel1.ResumeLayout(false);
 			this.splitContainerResource.Panel2.ResumeLayout(false);
 			this.splitContainerResource.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.gridResourcesStrings)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwResourceData)).EndInit();
 			this.panelTitle.ResumeLayout(false);
+			this.cmsDataGridView.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -313,13 +354,18 @@
 		private System.Windows.Forms.TreeView treeViewResx;
 		private System.Windows.Forms.SplitContainer splitContainerResource;
 		private System.Windows.Forms.CheckedListBox checkedListBoxLanguages;
-		private System.Windows.Forms.DataGridView gridResourcesStrings;
+		private System.Windows.Forms.DataGridView dgwResourceData;
 		private System.Windows.Forms.Panel panelTitle;
 		private System.Windows.Forms.Label labelTitle;
 		private System.Windows.Forms.ToolStripMenuItem showAllToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel tslEntryCount;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+		private System.Windows.Forms.ContextMenuStrip cmsDataGridView;
+		private System.Windows.Forms.ToolStripMenuItem addNewKeyToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem deleteKeyToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem recentProjectsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
 	}
 }
 
