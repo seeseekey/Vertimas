@@ -117,15 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;txtNeutralValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="txtDefaultValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 20</value>
-  </data>
   <data name="labelNoXlateValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 26</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtDefaultValue.TabIndex" type="System.Int32, mscorlib">
@@ -147,6 +147,9 @@
   <data name="labelKey.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormAddKey</value>
+  </data>
   <data name="labelDefaultValue.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -162,14 +165,17 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="btnAdd.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="labelDefaultValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 51</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="labelNoXlateValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 26</value>
+  <data name="txtDefaultValue.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -180,8 +186,14 @@
   <data name="txtNeutralValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelDefaultValue.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultValue.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -189,8 +201,14 @@
   <data name="labelKey.Text" xml:space="preserve">
     <value>Key</value>
   </data>
+  <data name="&gt;&gt;txtNeutralValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>355, 4</value>
+  </data>
+  <data name="&gt;&gt;txtKey.Name" xml:space="preserve">
+    <value>txtKey</value>
   </data>
   <data name="txtKey.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -198,11 +216,35 @@
   <data name="txtNeutralValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 29</value>
   </data>
+  <data name="txtDefaultValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 20</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="labelNoXlateValue.Text" xml:space="preserve">
     <value>Neutral Value</value>
   </data>
   <data name="txtKey.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;labelNoXlateValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtNeutralValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelNoXlateValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtKey.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="labelKey.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -210,11 +252,29 @@
   <data name="txtDefaultValue.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;labelKey.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="labelNoXlateValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="labelNoXlateValue.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;labelNoXlateValue.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labelDefaultValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
+  </data>
+  <data name="txtDefaultValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;labelDefaultValue.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="txtDefaultValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 55</value>
@@ -222,11 +282,32 @@
   <data name="labelNoXlateValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="btnAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="labelKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 26</value>
+  </data>
+  <data name="&gt;&gt;labelNoXlateValue.Name" xml:space="preserve">
+    <value>labelNoXlateValue</value>
+  </data>
+  <data name="labelNoXlateValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtDefaultValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelKey.Name" xml:space="preserve">
+    <value>labelKey</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtNeutralValue.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelDefaultValue.Name" xml:space="preserve">
+    <value>labelDefaultValue</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -313,39 +394,81 @@
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 71</value>
   </data>
-  <data name="labelDefaultValue.Text" xml:space="preserve">
-    <value>Default Value</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add key</value>
   </data>
   <data name="txtKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 20</value>
   </data>
-  <data name="txtDefaultValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="labelKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;labelDefaultValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelDefaultValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelDefaultValue.Text" xml:space="preserve">
+    <value>Default Value</value>
   </data>
   <data name="btnAdd.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="labelKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtKey.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="txtNeutralValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 20</value>
+  </data>
+  <data name="&gt;&gt;txtNeutralValue.Name" xml:space="preserve">
+    <value>txtNeutralValue</value>
   </data>
   <data name="labelKey.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="labelKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 26</value>
+  <data name="txtNeutralValue.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>442, 82</value>
   </data>
-  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelNoXlateValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 26</value>
   </data>
   <data name="txtNeutralValue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;txtDefaultValue.Name" xml:space="preserve">
+    <value>txtDefaultValue</value>
+  </data>
+  <data name="&gt;&gt;labelNoXlateValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelKey.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>de</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

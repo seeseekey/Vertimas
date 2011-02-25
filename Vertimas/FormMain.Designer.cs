@@ -242,11 +242,11 @@
 			// 
 			this.splitContainerMain.Panel2.Controls.Add(this.splitContainerResource);
 			// 
-			// treeViewResx
+			// tvFolderStructure
 			// 
-			resources.ApplyResources(this.tvFolderStructure, "treeViewResx");
+			resources.ApplyResources(this.tvFolderStructure, "tvFolderStructure");
 			this.tvFolderStructure.HideSelection=false;
-			this.tvFolderStructure.Name="treeViewResx";
+			this.tvFolderStructure.Name="tvFolderStructure";
 			this.tvFolderStructure.AfterSelect+=new System.Windows.Forms.TreeViewEventHandler(this.treeViewResx_AfterSelect);
 			// 
 			// splitContainerResource

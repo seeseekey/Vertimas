@@ -42,8 +42,8 @@
 			// 
 			// lvLanguages
 			// 
-			resources.ApplyResources(this.lvLanguages, "lvLanguages");
 			this.lvLanguages.AutoArrange=false;
+			resources.ApplyResources(this.lvLanguages, "lvLanguages");
 			this.lvLanguages.FullRowSelect=true;
 			this.lvLanguages.Name="lvLanguages";
 			this.lvLanguages.UseCompatibleStateImageBehavior=false;

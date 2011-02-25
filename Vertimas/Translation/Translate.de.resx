@@ -138,4 +138,13 @@
   <data name="ExceptionWhileSaving" xml:space="preserve">
     <value>Fehler beim Speichern: </value>
   </data>
+  <data name="ThisResourceFileAlreadyExists" xml:space="preserve">
+    <value>Die Resourcendatei existiert bereits!</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>Hinweis</value>
+  </data>
+  <data name="NoItemSelected" xml:space="preserve">
+    <value>Kein Eintrag selektiert.</value>
+  </data>
 </root>

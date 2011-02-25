@@ -117,11 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Error" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAdd.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAdd.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
+  <data name="txtDefaultValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDefaultValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtDefaultValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelDefaultValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelDefaultValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelDefaultValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="labelDefaultValue.Text" xml:space="preserve">
     <value>Standardwert</value>
+  </data>
+  <data name="txtNeutralValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNeutralValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtNeutralValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtKey.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelNoXlateValue.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelNoXlateValue.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelNoXlateValue.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="labelNoXlateValue.Text" xml:space="preserve">
     <value>Neutralwert</value>
@@ -202,6 +258,18 @@
         ///AD/x/wAf4f8AD+D/AAfgPwAD4B8AA/AfAA/8DwAf/g8APx4PAH4ODwH/AA8D/wAfB/+APw//wH8//
         /v////////////////////////////////8=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Schlüssel hinzufügen</value>
+  </data>
+  <data name="labelKey.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelKey.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="labelKey.Text" xml:space="preserve">
     <value>Schlüssel</value>

@@ -668,4 +668,7 @@
   <data name="labelProductName.Text" xml:space="preserve">
     <value>Produktname</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
 </root>
