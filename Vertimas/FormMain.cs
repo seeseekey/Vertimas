@@ -68,13 +68,13 @@ namespace Vertimas
 
 			FindResxFiles(rootPath);
 
-			treeViewResx.Nodes.Clear();
+			tvFolderStructure.Nodes.Clear();
 			foreach(ResourceHolder resource in resources.Values)
 			{
 				BuildTreeView(resource);
 			}
 
-			treeViewResx.ExpandAll();
+			tvFolderStructure.ExpandAll();
 		}
 
 		private void BuildTreeView(ResourceHolder resource)
@@ -84,7 +84,7 @@ namespace Vertimas
 
 			foreach(string subFolder in topFolders)
 			{
-				TreeNodeCollection searchNodes=parentNode==null?treeViewResx.Nodes:parentNode.Nodes;
+				TreeNodeCollection searchNodes=parentNode==null?tvFolderStructure.Nodes:parentNode.Nodes;
 				bool found=false;
 
 				foreach(TreeNode treeNode in searchNodes)
@@ -193,11 +193,6 @@ namespace Vertimas
             {
                 FindResxFiles(subfolder);
             }
-        }
-
-        private void treeViewResx_DoubleClick(object sender, EventArgs e)
-        {
-            SelectResource();
         }
 
         private void OpenResource(ResourceHolder resource)
@@ -575,26 +570,33 @@ namespace Vertimas
 				return;
 			}
 
-            treeViewResx.Nodes.Clear();
+            tvFolderStructure.Nodes.Clear();
             checkedListBoxLanguages.Items.Clear();
+
+			resources=new Dictionary<string, ResourceHolder>();
 
 			dgwResourceData.DataSource=null;
 			dgwResourceData.Columns.Clear();
 			dgwResourceData.Rows.Clear();
-
-            labelTitle.Visible = false;
+            
+			labelTitle.Visible = false;
 
             currentResource = null;
         }
 
         private void SelectResource()
         {
-            TreeNode selectedTreeNode = treeViewResx.SelectedNode;
-            if (selectedTreeNode == null)
-                return;
+            TreeNode selectedTreeNode = tvFolderStructure.SelectedNode;
 
-            if (selectedTreeNode.Tag is PathHolder)
-                return;
+			if(selectedTreeNode==null)
+			{
+				return;
+			}
+
+			if(selectedTreeNode.Tag is PathHolder)
+			{
+				return;
+			}
 
 			if(!(selectedTreeNode.Tag is ResourceHolder))
 			{
@@ -662,6 +664,32 @@ namespace Vertimas
 
 		private void menuStrip_MenuActivate(object sender, EventArgs e)
 		{
+			//Activate/Deactivate
+			if(currentResource==null)
+			{
+				//File
+				saveToolStripMenuItem.Enabled=false;
+
+				//Language
+				addNewLanguageToolStripMenuItem.Enabled=false;
+
+				//Keys
+				addNewKeyToolStripMenuItem.Enabled=false;
+				deleteKeyToolStripMenuItem.Enabled=false;
+			}
+			else
+			{
+				//File
+				saveToolStripMenuItem.Enabled=true;
+
+				//Language
+				addNewLanguageToolStripMenuItem.Enabled=true;
+
+				//Keys
+				addNewKeyToolStripMenuItem.Enabled=true;
+				deleteKeyToolStripMenuItem.Enabled=true;
+			}
+
 			//File
 			recentProjectsToolStripMenuItem.DropDownItems.Clear();
 
@@ -720,6 +748,88 @@ namespace Vertimas
 		{
 			FormAbout InstFormAbout=new FormAbout();
 			InstFormAbout.ShowDialog();
+		}
+
+		private void CleanFile(string filename)
+		{
+			XmlDocument xmlDoc=new XmlDocument();
+			xmlDoc.Load(filename);
+
+			HashSet<string> usedKeys=new HashSet<string>();
+			List<XmlNode> nodesToBeDeleted=new List<XmlNode>();
+
+			foreach(XmlNode dataNode in xmlDoc.SelectNodes("/root/data"))
+			{
+				if(dataNode.Attributes["type"]!=null)
+				{
+					// Only support strings
+					continue;
+				}
+
+				if(dataNode.Attributes["name"]==null)
+				{
+					// Missing name
+					continue;
+				}
+
+				dataNode.Attributes["name"].Value="";
+			}
+
+			xmlDoc.Save(filename);
+		}
+
+		private TreeNode GetTreenodeWithFullPath(TreeNode treeNode, string fullPath)
+		{
+			if(treeNode.FullPath==fullPath)
+			{
+				return treeNode;
+			}
+
+			foreach(TreeNode tn in treeNode.Nodes)
+			{
+				TreeNode node=GetTreenodeWithFullPath(tn, fullPath);
+				if(node!=null) return node;
+			}
+
+			return null;
+		}
+
+		private void addNewLanguageToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FormLanguageSelector InstFormLanguageSelector=new FormLanguageSelector();
+
+			if(InstFormLanguageSelector.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+			{
+				string resName=currentResource.Filename;
+				string resNameNewLanguage=String.Format("{0}{1}.{2}.resx", FileSystem.GetPath(resName), FileSystem.GetFilenameWithoutExt(resName), InstFormLanguageSelector.SelectedLanguage);
+
+				if(FileSystem.ExistsFile(resNameNewLanguage))
+				{
+					MessageBox.Show("This resource file already exists!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
+				}
+
+				//Save the project
+				saveToolStripMenuItem_Click(null, null);
+
+				//Save treenode position
+				string fullpath=tvFolderStructure.SelectedNode.FullPath;
+
+				//Close the project
+				closeToolStripMenuItem_Click(null, null);
+
+				//CopyFile
+				FileSystem.CopyFile(resName, resNameNewLanguage);
+
+				//Clean file
+				CleanFile(resNameNewLanguage);
+
+				//Reopen project
+				OpenFolder(rootPath);
+
+				//Reselect the treenode
+				tvFolderStructure.SelectedNode=GetTreenodeWithFullPath(tvFolderStructure.Nodes[0], fullpath);
+			}
 		}
     }
 }

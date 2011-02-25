@@ -36,11 +36,15 @@
 			this.toolStripMenuItem2=new System.Windows.Forms.ToolStripSeparator();
 			this.saveToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem3=new System.Windows.Forms.ToolStripSeparator();
+			this.recentProjectsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem1=new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.showAllToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.hideTranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.hideNontranslatedToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.languageToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.addNewLanguageToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.keysToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.addNewKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteKeyToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -50,17 +54,15 @@
 			this.statusStrip=new System.Windows.Forms.StatusStrip();
 			this.tslEntryCount=new System.Windows.Forms.ToolStripStatusLabel();
 			this.splitContainerMain=new System.Windows.Forms.SplitContainer();
-			this.treeViewResx=new System.Windows.Forms.TreeView();
+			this.tvFolderStructure=new System.Windows.Forms.TreeView();
 			this.splitContainerResource=new System.Windows.Forms.SplitContainer();
 			this.checkedListBoxLanguages=new System.Windows.Forms.CheckedListBox();
 			this.dgwResourceData=new System.Windows.Forms.DataGridView();
-			this.panelTitle=new System.Windows.Forms.Panel();
-			this.labelTitle=new System.Windows.Forms.Label();
 			this.cmsDataGridView=new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.addNewKeyToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteKeyToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
-			this.recentProjectsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem1=new System.Windows.Forms.ToolStripSeparator();
+			this.panelTitle=new System.Windows.Forms.Panel();
+			this.labelTitle=new System.Windows.Forms.Label();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
@@ -70,8 +72,8 @@
 			this.splitContainerResource.Panel2.SuspendLayout();
 			this.splitContainerResource.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwResourceData)).BeginInit();
-			this.panelTitle.SuspendLayout();
 			this.cmsDataGridView.SuspendLayout();
+			this.panelTitle.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -79,6 +81,7 @@
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.settingsToolStripMenuItem,
+            this.languageToolStripMenuItem,
             this.keysToolStripMenuItem,
             this.helpToolStripMenuItem});
 			resources.ApplyResources(this.menuStrip, "menuStrip");
@@ -120,6 +123,16 @@
 			this.toolStripMenuItem3.Name="toolStripMenuItem3";
 			resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
 			// 
+			// recentProjectsToolStripMenuItem
+			// 
+			this.recentProjectsToolStripMenuItem.Name="recentProjectsToolStripMenuItem";
+			resources.ApplyResources(this.recentProjectsToolStripMenuItem, "recentProjectsToolStripMenuItem");
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name="toolStripMenuItem1";
+			resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name="exitToolStripMenuItem";
@@ -152,6 +165,19 @@
 			this.hideNontranslatedToolStripMenuItem.Name="hideNontranslatedToolStripMenuItem";
 			resources.ApplyResources(this.hideNontranslatedToolStripMenuItem, "hideNontranslatedToolStripMenuItem");
 			this.hideNontranslatedToolStripMenuItem.Click+=new System.EventHandler(this.hideNontranslatedToolStripMenuItem_Click);
+			// 
+			// languageToolStripMenuItem
+			// 
+			this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewLanguageToolStripMenuItem});
+			this.languageToolStripMenuItem.Name="languageToolStripMenuItem";
+			resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+			// 
+			// addNewLanguageToolStripMenuItem
+			// 
+			this.addNewLanguageToolStripMenuItem.Name="addNewLanguageToolStripMenuItem";
+			resources.ApplyResources(this.addNewLanguageToolStripMenuItem, "addNewLanguageToolStripMenuItem");
+			this.addNewLanguageToolStripMenuItem.Click+=new System.EventHandler(this.addNewLanguageToolStripMenuItem_Click);
 			// 
 			// keysToolStripMenuItem
 			// 
@@ -210,7 +236,7 @@
 			// 
 			// splitContainerMain.Panel1
 			// 
-			this.splitContainerMain.Panel1.Controls.Add(this.treeViewResx);
+			this.splitContainerMain.Panel1.Controls.Add(this.tvFolderStructure);
 			// 
 			// splitContainerMain.Panel2
 			// 
@@ -218,10 +244,10 @@
 			// 
 			// treeViewResx
 			// 
-			resources.ApplyResources(this.treeViewResx, "treeViewResx");
-			this.treeViewResx.HideSelection=false;
-			this.treeViewResx.Name="treeViewResx";
-			this.treeViewResx.AfterSelect+=new System.Windows.Forms.TreeViewEventHandler(this.treeViewResx_AfterSelect);
+			resources.ApplyResources(this.tvFolderStructure, "treeViewResx");
+			this.tvFolderStructure.HideSelection=false;
+			this.tvFolderStructure.Name="treeViewResx";
+			this.tvFolderStructure.AfterSelect+=new System.Windows.Forms.TreeViewEventHandler(this.treeViewResx_AfterSelect);
 			// 
 			// splitContainerResource
 			// 
@@ -260,17 +286,6 @@
 			this.dgwResourceData.DataSourceChanged+=new System.EventHandler(this.gridResourcesStrings_DataSourceChanged);
 			this.dgwResourceData.CellEndEdit+=new System.Windows.Forms.DataGridViewCellEventHandler(this.gridResourcesStrings_CellLeave);
 			// 
-			// panelTitle
-			// 
-			this.panelTitle.Controls.Add(this.labelTitle);
-			resources.ApplyResources(this.panelTitle, "panelTitle");
-			this.panelTitle.Name="panelTitle";
-			// 
-			// labelTitle
-			// 
-			resources.ApplyResources(this.labelTitle, "labelTitle");
-			this.labelTitle.Name="labelTitle";
-			// 
 			// cmsDataGridView
 			// 
 			this.cmsDataGridView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -291,15 +306,16 @@
 			resources.ApplyResources(this.deleteKeyToolStripMenuItem1, "deleteKeyToolStripMenuItem1");
 			this.deleteKeyToolStripMenuItem1.Click+=new System.EventHandler(this.deleteKeyToolStripMenuItem_Click);
 			// 
-			// recentProjectsToolStripMenuItem
+			// panelTitle
 			// 
-			this.recentProjectsToolStripMenuItem.Name="recentProjectsToolStripMenuItem";
-			resources.ApplyResources(this.recentProjectsToolStripMenuItem, "recentProjectsToolStripMenuItem");
+			this.panelTitle.Controls.Add(this.labelTitle);
+			resources.ApplyResources(this.panelTitle, "panelTitle");
+			this.panelTitle.Name="panelTitle";
 			// 
-			// toolStripMenuItem1
+			// labelTitle
 			// 
-			this.toolStripMenuItem1.Name="toolStripMenuItem1";
-			resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+			resources.ApplyResources(this.labelTitle, "labelTitle");
+			this.labelTitle.Name="labelTitle";
 			// 
 			// FormMain
 			// 
@@ -325,8 +341,8 @@
 			this.splitContainerResource.Panel2.ResumeLayout(false);
 			this.splitContainerResource.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgwResourceData)).EndInit();
-			this.panelTitle.ResumeLayout(false);
 			this.cmsDataGridView.ResumeLayout(false);
+			this.panelTitle.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -351,7 +367,7 @@
 		private System.Windows.Forms.ToolStrip toolStrip;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.SplitContainer splitContainerMain;
-		private System.Windows.Forms.TreeView treeViewResx;
+		private System.Windows.Forms.TreeView tvFolderStructure;
 		private System.Windows.Forms.SplitContainer splitContainerResource;
 		private System.Windows.Forms.CheckedListBox checkedListBoxLanguages;
 		private System.Windows.Forms.DataGridView dgwResourceData;
@@ -366,6 +382,8 @@
 		private System.Windows.Forms.ToolStripMenuItem deleteKeyToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem recentProjectsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem addNewLanguageToolStripMenuItem;
 	}
 }
 

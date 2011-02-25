@@ -81,6 +81,12 @@
       <DependentUpon>FormAddKey.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Common.cs" />
+    <Compile Include="FormLanguageSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLanguageSelector.Designer.cs">
+      <DependentUpon>FormLanguageSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddKey.resx">
       <DependentUpon>FormAddKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLanguageSelector.resx">
+      <DependentUpon>FormLanguageSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.de.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
