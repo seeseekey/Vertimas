@@ -199,4 +199,19 @@
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Hilfe</value>
   </data>
+  <data name="addNewLanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Neue Sprache hinzufügen...</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="addNewKeyToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Neuen Schlüssel hinzufügen...</value>
+  </data>
+  <data name="deleteKeyToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Schlüssel löschen...</value>
+  </data>
+  <data name="recentProjectsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Letzte Projekte</value>
+  </data>
 </root>
