@@ -787,7 +787,7 @@ namespace Vertimas
 
 				if(FileSystem.ExistsFile(resNameNewLanguage))
 				{
-					MessageBox.Show("This resource file already exists!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show(Translate.ThisResourceFileAlreadyExists, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
 					return;
 				}
 

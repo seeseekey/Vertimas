@@ -97,11 +97,29 @@ namespace Vertimas.Translation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Browse to the root of the project, typically where the sln file is.
+        ///   Looks up a localized string similar to Browse to the folder of the project, typically where the sln file is:.
         /// </summary>
         internal static string FolderDialogDescription {
             get {
                 return ResourceManager.GetString("FolderDialogDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No item selected!.
+        /// </summary>
+        internal static string NoItemSelected {
+            get {
+                return ResourceManager.GetString("NoItemSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notice.
+        /// </summary>
+        internal static string Notice {
+            get {
+                return ResourceManager.GetString("Notice", resourceCulture);
             }
         }
         
@@ -111,6 +129,15 @@ namespace Vertimas.Translation {
         internal static string SaveFiles {
             get {
                 return ResourceManager.GetString("SaveFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This resource file already exists!.
+        /// </summary>
+        internal static string ThisResourceFileAlreadyExists {
+            get {
+                return ResourceManager.GetString("ThisResourceFileAlreadyExists", resourceCulture);
             }
         }
         

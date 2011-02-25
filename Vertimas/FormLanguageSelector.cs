@@ -176,7 +176,7 @@ namespace Vertimas
 		{
 			if(lvLanguages.SelectedItems.Count==0)
 			{
-				MessageBox.Show("No item selected!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MessageBox.Show(Translation.Translate.NoItemSelected, Translation.Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return;
 			}
 
