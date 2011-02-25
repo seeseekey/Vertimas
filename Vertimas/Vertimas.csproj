@@ -119,6 +119,9 @@
     <EmbeddedResource Include="FormAddKey.resx">
       <DependentUpon>FormAddKey.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLanguageSelector.de.resx">
+      <DependentUpon>FormLanguageSelector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLanguageSelector.resx">
       <DependentUpon>FormLanguageSelector.cs</DependentUpon>
     </EmbeddedResource>

@@ -44,44 +44,66 @@
 			// labelKey
 			// 
 			resources.ApplyResources(this.labelKey, "labelKey");
+			this.errorProvider.SetError(this.labelKey, resources.GetString("labelKey.Error"));
+			this.errorProvider.SetIconAlignment(this.labelKey, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelKey.IconAlignment"))));
+			this.errorProvider.SetIconPadding(this.labelKey, ((int)(resources.GetObject("labelKey.IconPadding"))));
 			this.labelKey.Name="labelKey";
 			// 
 			// labelNoXlateValue
 			// 
 			resources.ApplyResources(this.labelNoXlateValue, "labelNoXlateValue");
+			this.errorProvider.SetError(this.labelNoXlateValue, resources.GetString("labelNoXlateValue.Error"));
+			this.errorProvider.SetIconAlignment(this.labelNoXlateValue, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelNoXlateValue.IconAlignment"))));
+			this.errorProvider.SetIconPadding(this.labelNoXlateValue, ((int)(resources.GetObject("labelNoXlateValue.IconPadding"))));
 			this.labelNoXlateValue.Name="labelNoXlateValue";
 			// 
 			// txtKey
 			// 
 			resources.ApplyResources(this.txtKey, "txtKey");
+			this.errorProvider.SetError(this.txtKey, resources.GetString("txtKey.Error"));
+			this.errorProvider.SetIconAlignment(this.txtKey, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtKey.IconAlignment"))));
+			this.errorProvider.SetIconPadding(this.txtKey, ((int)(resources.GetObject("txtKey.IconPadding"))));
 			this.txtKey.Name="txtKey";
 			this.txtKey.TextChanged+=new System.EventHandler(this.txtKey_TextChanged);
 			// 
 			// txtNeutralValue
 			// 
 			resources.ApplyResources(this.txtNeutralValue, "txtNeutralValue");
+			this.errorProvider.SetError(this.txtNeutralValue, resources.GetString("txtNeutralValue.Error"));
+			this.errorProvider.SetIconAlignment(this.txtNeutralValue, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtNeutralValue.IconAlignment"))));
+			this.errorProvider.SetIconPadding(this.txtNeutralValue, ((int)(resources.GetObject("txtNeutralValue.IconPadding"))));
 			this.txtNeutralValue.Name="txtNeutralValue";
 			// 
 			// btnAdd
 			// 
 			resources.ApplyResources(this.btnAdd, "btnAdd");
 			this.btnAdd.DialogResult=System.Windows.Forms.DialogResult.OK;
+			this.errorProvider.SetError(this.btnAdd, resources.GetString("btnAdd.Error"));
+			this.errorProvider.SetIconAlignment(this.btnAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnAdd.IconAlignment"))));
+			this.errorProvider.SetIconPadding(this.btnAdd, ((int)(resources.GetObject("btnAdd.IconPadding"))));
 			this.btnAdd.Name="btnAdd";
 			this.btnAdd.UseVisualStyleBackColor=true;
 			// 
 			// labelDefaultValue
 			// 
 			resources.ApplyResources(this.labelDefaultValue, "labelDefaultValue");
+			this.errorProvider.SetError(this.labelDefaultValue, resources.GetString("labelDefaultValue.Error"));
+			this.errorProvider.SetIconAlignment(this.labelDefaultValue, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelDefaultValue.IconAlignment"))));
+			this.errorProvider.SetIconPadding(this.labelDefaultValue, ((int)(resources.GetObject("labelDefaultValue.IconPadding"))));
 			this.labelDefaultValue.Name="labelDefaultValue";
 			// 
 			// txtDefaultValue
 			// 
 			resources.ApplyResources(this.txtDefaultValue, "txtDefaultValue");
+			this.errorProvider.SetError(this.txtDefaultValue, resources.GetString("txtDefaultValue.Error"));
+			this.errorProvider.SetIconAlignment(this.txtDefaultValue, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtDefaultValue.IconAlignment"))));
+			this.errorProvider.SetIconPadding(this.txtDefaultValue, ((int)(resources.GetObject("txtDefaultValue.IconPadding"))));
 			this.txtDefaultValue.Name="txtDefaultValue";
 			// 
 			// errorProvider
 			// 
 			this.errorProvider.ContainerControl=this;
+			resources.ApplyResources(this.errorProvider, "errorProvider");
 			// 
 			// FormAddKey
 			// 
