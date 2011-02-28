@@ -151,6 +151,15 @@ namespace Vertimas.Translation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This is no valid language field for translation..
+        /// </summary>
+        internal static string ThisIsNoValidLanguageFieldForTranslation {
+            get {
+                return ResourceManager.GetString("ThisIsNoValidLanguageFieldForTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This resource file already exists!.
         /// </summary>
         internal static string ThisResourceFileAlreadyExists {

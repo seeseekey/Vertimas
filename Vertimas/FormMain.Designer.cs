@@ -72,6 +72,8 @@
 			this.toolStripMenuItem6=new System.Windows.Forms.ToolStripSeparator();
 			this.cutFieldToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem7=new System.Windows.Forms.ToolStripSeparator();
+			this.translateFormNeutralLanguageToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem8=new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
@@ -306,6 +308,8 @@
             this.copyFieldToolStripMenuItem,
             this.copyFromNeutralLanguageToolStripMenuItem,
             this.toolStripMenuItem5,
+            this.translateFormNeutralLanguageToolStripMenuItem,
+            this.toolStripMenuItem8,
             this.pasteFieldToolStripMenuItem,
             this.toolStripMenuItem6,
             this.clearFieldToolStripMenuItem});
@@ -385,6 +389,17 @@
 			this.toolStripMenuItem7.Name="toolStripMenuItem7";
 			resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
 			// 
+			// translateFormNeutralLanguageToolStripMenuItem
+			// 
+			this.translateFormNeutralLanguageToolStripMenuItem.Name="translateFormNeutralLanguageToolStripMenuItem";
+			resources.ApplyResources(this.translateFormNeutralLanguageToolStripMenuItem, "translateFormNeutralLanguageToolStripMenuItem");
+			this.translateFormNeutralLanguageToolStripMenuItem.Click+=new System.EventHandler(this.translateFormNeutralLanguageToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem8
+			// 
+			this.toolStripMenuItem8.Name="toolStripMenuItem8";
+			resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
+			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -461,6 +476,8 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
 		private System.Windows.Forms.ToolStripMenuItem cutFieldToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
+		private System.Windows.Forms.ToolStripMenuItem translateFormNeutralLanguageToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
 	}
 }
 

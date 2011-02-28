@@ -153,4 +153,7 @@
   <data name="InThisFieldCanNotBeCopied" xml:space="preserve">
     <value>In this field can not be copied.</value>
   </data>
+  <data name="ThisIsNoValidLanguageFieldForTranslation" xml:space="preserve">
+    <value>This is no valid language field for translation.</value>
+  </data>
 </root>
