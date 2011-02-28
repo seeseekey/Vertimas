@@ -214,4 +214,22 @@
   <data name="recentProjectsToolStripMenuItem.Text" xml:space="preserve">
     <value>Letzte Projekte</value>
   </data>
+  <data name="cutFieldToolStripMenuItem.Text" xml:space="preserve">
+    <value>Feld ausschneiden</value>
+  </data>
+  <data name="copyFieldToolStripMenuItem.Text" xml:space="preserve">
+    <value>Feld kopieren</value>
+  </data>
+  <data name="copyFromNeutralLanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Von neutraler Sprache kopieren</value>
+  </data>
+  <data name="translateFormNeutralLanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Von neutraler Sprache übersetzen</value>
+  </data>
+  <data name="pasteFieldToolStripMenuItem.Text" xml:space="preserve">
+    <value>Feld einfügen</value>
+  </data>
+  <data name="clearFieldToolStripMenuItem.Text" xml:space="preserve">
+    <value>Feld löschen</value>
+  </data>
 </root>
