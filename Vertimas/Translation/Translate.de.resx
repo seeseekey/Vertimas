@@ -147,4 +147,10 @@
   <data name="NoItemSelected" xml:space="preserve">
     <value>Kein Eintrag selektiert.</value>
   </data>
+  <data name="InThisFieldCanNotBeCopied" xml:space="preserve">
+    <value>In dieses Feld kann nicht kopiert werden.</value>
+  </data>
+  <data name="ThisIsNoValidLanguageFieldForTranslation" xml:space="preserve">
+    <value>Dieses Feld ist kein valides Feld für die Übersetzung.</value>
+  </data>
 </root>
