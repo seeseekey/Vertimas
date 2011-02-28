@@ -79,6 +79,9 @@ namespace Vertimas.Classes
 				}
 
 				string key=dataNode.Attributes["name"].Value;
+
+				if((key.StartsWith(">>")||key.StartsWith("$"))&&key!="$this.Text") continue; // Preserve stuff in resx-file, that was not included in DataTable!!
+
 				DataRow[] rows=stringsTable.Select("Key = '"+key+"'");
 
 				if(rows.Length==0)
@@ -249,7 +252,7 @@ namespace Vertimas.Classes
 				{
 					string key=(string)de.Key;
 
-					if(key.StartsWith(">>")||key.StartsWith("$")) continue;
+					if((key.StartsWith(">>")||key.StartsWith("$"))&&key!="$this.Text") continue;
 
 					System.Resources.ResXDataNode dataNode=de.Value as System.Resources.ResXDataNode;
 
