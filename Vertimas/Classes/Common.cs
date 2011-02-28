@@ -8,7 +8,7 @@ namespace Vertimas.Classes
 	public static class Common
 	{
 		readonly static string NonTranslatedString="[{0}]";
-		public readonly static string Neutral="Neutral (en)";
+		public const string Neutral="Neutral (en)";
 
 		public static string GetDefaultValue(string key)
 		{

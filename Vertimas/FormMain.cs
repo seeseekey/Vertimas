@@ -828,14 +828,14 @@ namespace Vertimas
 			switch(columnName)
 			{
 				case "Key":
-				case "Neutral":
+				case Common.Neutral:
 					{
 						MessageBox.Show(Translate.InThisFieldCanNotBeCopied, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
 			}
 
-			string neutralValue=row.Cells["Neutral"].Value.ToString();
+			string neutralValue=row.Cells[Common.Neutral].Value.ToString();
 			dgwResourceData.SelectedCells[0].Value=neutralValue;
 		}
 
@@ -910,14 +910,14 @@ namespace Vertimas
 			switch(columnName)
 			{
 				case "Key":
-				case "Neutral":
+				case Common.Neutral:
 					{
 						MessageBox.Show(Translate.ThisIsNoValidLanguageFieldForTranslation, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
 			}
 
-			string neutralValue=row.Cells["Neutral"].Value.ToString();
+			string neutralValue=row.Cells[Common.Neutral].Value.ToString();
 			dgwResourceData.SelectedCells[0].Value=neutralValue;
 
 			dgwResourceData.SelectedCells[0].Value=CSCL.Services.Google.Translate.Translator.Translate(neutralValue, "en", columnName);
