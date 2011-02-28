@@ -106,6 +106,24 @@ namespace Vertimas.Translation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In this field can not be copied..
+        /// </summary>
+        internal static string InThisFieldCanNotBeCopied {
+            get {
+                return ResourceManager.GetString("InThisFieldCanNotBeCopied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No entry selected!.
+        /// </summary>
+        internal static string NoEntrySelected {
+            get {
+                return ResourceManager.GetString("NoEntrySelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No item selected!.
         /// </summary>
         internal static string NoItemSelected {

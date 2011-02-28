@@ -61,8 +61,17 @@
 			this.cmsDataGridView=new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.addNewKeyToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteKeyToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem4=new System.Windows.Forms.ToolStripSeparator();
+			this.copyFromNeutralLanguageToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
 			this.panelTitle=new System.Windows.Forms.Panel();
 			this.labelTitle=new System.Windows.Forms.Label();
+			this.toolStripMenuItem5=new System.Windows.Forms.ToolStripSeparator();
+			this.clearFieldToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.copyFieldToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.pasteFieldToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem6=new System.Windows.Forms.ToolStripSeparator();
+			this.cutFieldToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem7=new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.splitContainerMain.Panel1.SuspendLayout();
@@ -282,7 +291,7 @@
 			resources.ApplyResources(this.dgwResourceData, "dgwResourceData");
 			this.dgwResourceData.MultiSelect=false;
 			this.dgwResourceData.Name="dgwResourceData";
-			this.dgwResourceData.SelectionMode=System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgwResourceData.SelectionMode=System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
 			this.dgwResourceData.DataSourceChanged+=new System.EventHandler(this.gridResourcesStrings_DataSourceChanged);
 			this.dgwResourceData.CellEndEdit+=new System.Windows.Forms.DataGridViewCellEventHandler(this.gridResourcesStrings_CellLeave);
 			// 
@@ -290,7 +299,16 @@
 			// 
 			this.cmsDataGridView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewKeyToolStripMenuItem1,
-            this.deleteKeyToolStripMenuItem1});
+            this.deleteKeyToolStripMenuItem1,
+            this.toolStripMenuItem4,
+            this.cutFieldToolStripMenuItem,
+            this.toolStripMenuItem7,
+            this.copyFieldToolStripMenuItem,
+            this.copyFromNeutralLanguageToolStripMenuItem,
+            this.toolStripMenuItem5,
+            this.pasteFieldToolStripMenuItem,
+            this.toolStripMenuItem6,
+            this.clearFieldToolStripMenuItem});
 			this.cmsDataGridView.Name="cmsDataGridView";
 			resources.ApplyResources(this.cmsDataGridView, "cmsDataGridView");
 			// 
@@ -306,6 +324,17 @@
 			resources.ApplyResources(this.deleteKeyToolStripMenuItem1, "deleteKeyToolStripMenuItem1");
 			this.deleteKeyToolStripMenuItem1.Click+=new System.EventHandler(this.deleteKeyToolStripMenuItem_Click);
 			// 
+			// toolStripMenuItem4
+			// 
+			this.toolStripMenuItem4.Name="toolStripMenuItem4";
+			resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+			// 
+			// copyFromNeutralLanguageToolStripMenuItem
+			// 
+			this.copyFromNeutralLanguageToolStripMenuItem.Name="copyFromNeutralLanguageToolStripMenuItem";
+			resources.ApplyResources(this.copyFromNeutralLanguageToolStripMenuItem, "copyFromNeutralLanguageToolStripMenuItem");
+			this.copyFromNeutralLanguageToolStripMenuItem.Click+=new System.EventHandler(this.copyFromNeutralLanguageToolStripMenuItem_Click);
+			// 
 			// panelTitle
 			// 
 			this.panelTitle.Controls.Add(this.labelTitle);
@@ -316,6 +345,45 @@
 			// 
 			resources.ApplyResources(this.labelTitle, "labelTitle");
 			this.labelTitle.Name="labelTitle";
+			// 
+			// toolStripMenuItem5
+			// 
+			this.toolStripMenuItem5.Name="toolStripMenuItem5";
+			resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+			// 
+			// clearFieldToolStripMenuItem
+			// 
+			this.clearFieldToolStripMenuItem.Name="clearFieldToolStripMenuItem";
+			resources.ApplyResources(this.clearFieldToolStripMenuItem, "clearFieldToolStripMenuItem");
+			this.clearFieldToolStripMenuItem.Click+=new System.EventHandler(this.clearFieldToolStripMenuItem_Click);
+			// 
+			// copyFieldToolStripMenuItem
+			// 
+			this.copyFieldToolStripMenuItem.Name="copyFieldToolStripMenuItem";
+			resources.ApplyResources(this.copyFieldToolStripMenuItem, "copyFieldToolStripMenuItem");
+			this.copyFieldToolStripMenuItem.Click+=new System.EventHandler(this.copyFieldToolStripMenuItem_Click);
+			// 
+			// pasteFieldToolStripMenuItem
+			// 
+			this.pasteFieldToolStripMenuItem.Name="pasteFieldToolStripMenuItem";
+			resources.ApplyResources(this.pasteFieldToolStripMenuItem, "pasteFieldToolStripMenuItem");
+			this.pasteFieldToolStripMenuItem.Click+=new System.EventHandler(this.pasteFieldToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem6
+			// 
+			this.toolStripMenuItem6.Name="toolStripMenuItem6";
+			resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+			// 
+			// cutFieldToolStripMenuItem
+			// 
+			this.cutFieldToolStripMenuItem.Name="cutFieldToolStripMenuItem";
+			resources.ApplyResources(this.cutFieldToolStripMenuItem, "cutFieldToolStripMenuItem");
+			this.cutFieldToolStripMenuItem.Click+=new System.EventHandler(this.cutFieldToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem7
+			// 
+			this.toolStripMenuItem7.Name="toolStripMenuItem7";
+			resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
 			// 
 			// FormMain
 			// 
@@ -384,6 +452,15 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addNewLanguageToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+		private System.Windows.Forms.ToolStripMenuItem copyFromNeutralLanguageToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+		private System.Windows.Forms.ToolStripMenuItem clearFieldToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem copyFieldToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem pasteFieldToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+		private System.Windows.Forms.ToolStripMenuItem cutFieldToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
 	}
 }
 

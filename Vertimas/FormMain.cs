@@ -813,5 +813,87 @@ namespace Vertimas
 				tvFolderStructure.SelectedNode=GetTreenodeWithFullPath(tvFolderStructure.Nodes[0], fullpath);
 			}
 		}
+
+		private void copyFromNeutralLanguageToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if(dgwResourceData.SelectedCells.Count==0)
+			{
+				MessageBox.Show(Translate.NoItemSelected, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+			DataGridViewRow row=dgwResourceData.Rows[dgwResourceData.SelectedCells[0].RowIndex];
+			string columnName=dgwResourceData.Columns[dgwResourceData.SelectedCells[0].ColumnIndex].Name;
+
+			switch(columnName)
+			{
+				case "Key":
+				case "Neutral":
+					{
+						MessageBox.Show(Translate.InThisFieldCanNotBeCopied, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+						return;
+					}
+			}
+
+			string neutralValue=row.Cells["Neutral"].Value.ToString();
+			dgwResourceData.SelectedCells[0].Value=neutralValue;
+		}
+
+		private void clearFieldToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if(dgwResourceData.SelectedCells.Count==0)
+			{
+				MessageBox.Show(Translate.NoItemSelected, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+			DataGridViewRow row=dgwResourceData.Rows[dgwResourceData.SelectedCells[0].RowIndex];
+			string columnName=dgwResourceData.Columns[dgwResourceData.SelectedCells[0].ColumnIndex].Name;
+
+			switch(columnName)
+			{
+				case "Key":
+					{
+						MessageBox.Show("This field can not be cleared.", Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+						return;
+					}
+			}
+
+			dgwResourceData.SelectedCells[0].Value="";
+		}
+
+		private void copyFieldToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if(dgwResourceData.SelectedCells.Count==0)
+			{
+				MessageBox.Show(Translate.NoItemSelected, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+			Clipboard.SetText(dgwResourceData.SelectedCells[0].Value.ToString());
+		}
+
+		private void pasteFieldToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if(dgwResourceData.SelectedCells.Count==0)
+			{
+				MessageBox.Show(Translate.NoItemSelected, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+			dgwResourceData.SelectedCells[0].Value=Clipboard.GetText();
+		}
+
+		private void cutFieldToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if(dgwResourceData.SelectedCells.Count==0)
+			{
+				MessageBox.Show(Translate.NoItemSelected, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+			Clipboard.SetText(dgwResourceData.SelectedCells[0].Value.ToString());
+			dgwResourceData.SelectedCells[0].Value="";
+		}
     }
 }

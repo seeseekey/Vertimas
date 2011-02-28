@@ -147,4 +147,10 @@
   <data name="NoItemSelected" xml:space="preserve">
     <value>No item selected!</value>
   </data>
+  <data name="NoEntrySelected" xml:space="preserve">
+    <value>No entry selected!</value>
+  </data>
+  <data name="InThisFieldCanNotBeCopied" xml:space="preserve">
+    <value>In this field can not be copied.</value>
+  </data>
 </root>
