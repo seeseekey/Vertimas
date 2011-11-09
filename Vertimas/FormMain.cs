@@ -895,32 +895,5 @@ namespace Vertimas
 			Clipboard.SetText(dgwResourceData.SelectedCells[0].Value.ToString());
 			dgwResourceData.SelectedCells[0].Value="";
 		}
-
-		private void translateFormNeutralLanguageToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			if(dgwResourceData.SelectedCells.Count==0)
-			{
-				MessageBox.Show(Translate.NoItemSelected, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
-				return;
-			}
-
-			DataGridViewRow row=dgwResourceData.Rows[dgwResourceData.SelectedCells[0].RowIndex];
-			string columnName=dgwResourceData.Columns[dgwResourceData.SelectedCells[0].ColumnIndex].Name;
-
-			switch(columnName)
-			{
-				case "Key":
-				case Common.Neutral:
-					{
-						MessageBox.Show(Translate.ThisIsNoValidLanguageFieldForTranslation, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
-						return;
-					}
-			}
-
-			string neutralValue=row.Cells[Common.Neutral].Value.ToString();
-			dgwResourceData.SelectedCells[0].Value=neutralValue;
-
-			dgwResourceData.SelectedCells[0].Value=CSCL.Services.Google.Translate.Translator.Translate(neutralValue, "en", columnName);
-		}
     }
 }
