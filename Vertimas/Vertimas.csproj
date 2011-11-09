@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Vertimas</RootNamespace>
     <AssemblyName>Vertimas</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -162,14 +162,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\logo.ico" />
+    <Content Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\cscl.googlecode.com\CSCL\CSCL.csproj">
       <Project>{0E720343-5366-4C3A-BC59-7B7FD2C311B5}</Project>
       <Name>CSCL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\logo.ico" />
-    <Content Include="Images\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
