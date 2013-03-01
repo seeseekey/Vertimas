@@ -72,6 +72,8 @@
 			this.clearFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.panelTitle = new System.Windows.Forms.Panel();
 			this.labelTitle = new System.Windows.Forms.Label();
+			this.copyAllFromNeutralLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
@@ -307,6 +309,8 @@
             this.toolStripMenuItem7,
             this.copyFieldToolStripMenuItem,
             this.copyFromNeutralLanguageToolStripMenuItem,
+            this.toolStripMenuItem5,
+            this.copyAllFromNeutralLanguageToolStripMenuItem,
             this.toolStripMenuItem8,
             this.pasteFieldToolStripMenuItem,
             this.toolStripMenuItem6,
@@ -387,6 +391,17 @@
 			resources.ApplyResources(this.labelTitle, "labelTitle");
 			this.labelTitle.Name = "labelTitle";
 			// 
+			// copyAllFromNeutralLanguageToolStripMenuItem
+			// 
+			this.copyAllFromNeutralLanguageToolStripMenuItem.Name = "copyAllFromNeutralLanguageToolStripMenuItem";
+			resources.ApplyResources(this.copyAllFromNeutralLanguageToolStripMenuItem, "copyAllFromNeutralLanguageToolStripMenuItem");
+			this.copyAllFromNeutralLanguageToolStripMenuItem.Click += new System.EventHandler(this.copyAllFromNeutralLanguageToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem5
+			// 
+			this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+			resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -465,6 +480,8 @@
 		private System.Windows.Forms.ToolStripMenuItem cutFieldToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+		private System.Windows.Forms.ToolStripMenuItem copyAllFromNeutralLanguageToolStripMenuItem;
 	}
 }
 

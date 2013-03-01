@@ -895,5 +895,26 @@ namespace Vertimas
 			Clipboard.SetText(dgwResourceData.SelectedCells[0].Value.ToString());
 			dgwResourceData.SelectedCells[0].Value="";
 		}
+
+		private void copyAllFromNeutralLanguageToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			foreach(DataGridViewRow row in dgwResourceData.Rows)
+			{
+				string columnName=dgwResourceData.Columns[dgwResourceData.SelectedCells[0].ColumnIndex].Name;
+
+				switch(columnName)
+				{
+					case "Key":
+					case Common.Neutral:
+						{
+							MessageBox.Show(Translate.InThisFieldCanNotBeCopied, Translate.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+							return;
+						}
+				}
+
+				string neutralValue=row.Cells[Common.Neutral].Value.ToString();
+				row.Cells[columnName].Value=neutralValue;
+			}
+		}
     }
 }
