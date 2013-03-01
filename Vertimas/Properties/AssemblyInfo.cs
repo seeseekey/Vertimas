@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Vertimas")]
-[assembly: AssemblyCopyright("© 2010 by seeseekey under GPL")]
+[assembly: AssemblyCopyright("© 2010 - 2013 by seeseekey")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,4 +31,4 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.3.2.1")]
+[assembly: AssemblyVersion("12.03")]
