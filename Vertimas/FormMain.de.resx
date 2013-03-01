@@ -232,4 +232,7 @@
   <data name="clearFieldToolStripMenuItem.Text" xml:space="preserve">
     <value>Feld löschen</value>
   </data>
+  <data name="copyAllFromNeutralLanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alles von neutraler Sprache kopieren</value>
+  </data>
 </root>
