@@ -50,7 +50,6 @@
 			this.deleteKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.tslEntryCount = new System.Windows.Forms.ToolStripStatusLabel();
 			this.splitContainerMain = new System.Windows.Forms.SplitContainer();
@@ -66,14 +65,14 @@
 			this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
 			this.copyFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyFromNeutralLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+			this.copyAllFromNeutralLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
 			this.pasteFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
 			this.clearFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.panelTitle = new System.Windows.Forms.Panel();
 			this.labelTitle = new System.Windows.Forms.Label();
-			this.copyAllFromNeutralLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
@@ -225,11 +224,6 @@
 			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 			// 
-			// toolStrip
-			// 
-			resources.ApplyResources(this.toolStrip, "toolStrip");
-			this.toolStrip.Name = "toolStrip";
-			// 
 			// statusStrip
 			// 
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -358,6 +352,17 @@
 			resources.ApplyResources(this.copyFromNeutralLanguageToolStripMenuItem, "copyFromNeutralLanguageToolStripMenuItem");
 			this.copyFromNeutralLanguageToolStripMenuItem.Click += new System.EventHandler(this.copyFromNeutralLanguageToolStripMenuItem_Click);
 			// 
+			// toolStripMenuItem5
+			// 
+			this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+			resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+			// 
+			// copyAllFromNeutralLanguageToolStripMenuItem
+			// 
+			this.copyAllFromNeutralLanguageToolStripMenuItem.Name = "copyAllFromNeutralLanguageToolStripMenuItem";
+			resources.ApplyResources(this.copyAllFromNeutralLanguageToolStripMenuItem, "copyAllFromNeutralLanguageToolStripMenuItem");
+			this.copyAllFromNeutralLanguageToolStripMenuItem.Click += new System.EventHandler(this.copyAllFromNeutralLanguageToolStripMenuItem_Click);
+			// 
 			// toolStripMenuItem8
 			// 
 			this.toolStripMenuItem8.Name = "toolStripMenuItem8";
@@ -391,24 +396,12 @@
 			resources.ApplyResources(this.labelTitle, "labelTitle");
 			this.labelTitle.Name = "labelTitle";
 			// 
-			// copyAllFromNeutralLanguageToolStripMenuItem
-			// 
-			this.copyAllFromNeutralLanguageToolStripMenuItem.Name = "copyAllFromNeutralLanguageToolStripMenuItem";
-			resources.ApplyResources(this.copyAllFromNeutralLanguageToolStripMenuItem, "copyAllFromNeutralLanguageToolStripMenuItem");
-			this.copyAllFromNeutralLanguageToolStripMenuItem.Click += new System.EventHandler(this.copyAllFromNeutralLanguageToolStripMenuItem_Click);
-			// 
-			// toolStripMenuItem5
-			// 
-			this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-			resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.splitContainerMain);
 			this.Controls.Add(this.statusStrip);
-			this.Controls.Add(this.toolStrip);
 			this.Controls.Add(this.menuStrip);
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "FormMain";
@@ -451,7 +444,6 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
 		private System.Windows.Forms.ToolStripMenuItem hideTranslatedToolStripMenuItem;
-		private System.Windows.Forms.ToolStrip toolStrip;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.SplitContainer splitContainerMain;
 		private System.Windows.Forms.TreeView tvFolderStructure;
